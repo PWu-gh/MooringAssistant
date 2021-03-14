@@ -31,11 +31,14 @@ export default class SliderBox extends Component {
 					<TextInput 
 						style={styles.txtValBox}
 						placeholder={this.state.curVal.toString()}
-						placeholderTextColor="black"
+						// placeholderTextColor="black"
 						keyboardType='numeric'
-						onTextChange={() => console.log("test")}
+						onChangeText={val => 
+							this.setState({curVal: val ? parseFloat(val) : 0
+						})}
 						// onTextChange={val => this.setState({ curVal: parseInt(val).toFixed(1) })}
-						value={this.state.curVal}
+						value={ this.state.curVal.toString()}
+						
 					/>
 				</TouchableHighlight>
 

@@ -131,6 +131,7 @@ export default StyleSheet.create({
     },
     txtValBox:{
         fontSize: 20,
+        textAlign:'center',
     },
     sliderContainer: {
         flex: 1,
@@ -164,6 +165,28 @@ export default StyleSheet.create({
         alignSelf: "center",
         textTransform: "uppercase"
     },
+
+    // CVision
+
+    msgVis:{
+        height: 80,
+    },
+    camBox:{
+        backgroundColor: palette.black,
+        width:"100%",
+        aspectRatio:1,
+
+    },
+    gauge:{
+        height: 50,
+        backgroundColor: palette.secondary,
+    },
+
+    btnCam:{
+        height:100,
+        alignContent:'center',
+        justifyContent:'center',
+    }
     
 
 

@@ -1,5 +1,7 @@
 import React from 'react';
-import { StyleSheet, View, Text, Button } from 'react-native';
+import {View, Text, TouchableOpacity } from 'react-native';
+
+import styles from "../styles/styles";
 
 export default function CVision({ navigation }) {
 
@@ -7,9 +9,20 @@ export default function CVision({ navigation }) {
 
 
   return (
-    <View>
-      {/* <Text>ReviewDetails Screen</Text> */}
-      {/* <Button title='OK' onPress={pressHandler} /> */}
+    <View style= {styles.useScreen}>
+        <View style={styles.msgVis}>
+            <Text>Nombre de tours</Text>
+        </View>
+
+		<View style={styles.camBox}></View>
+
+		<View style={styles.gauge}></View>
+
+		<View style={styles.btnCam}>
+			<TouchableOpacity onPress={console.log("yep")} style={styles.btnContainer}>
+				<Text style={styles.btnText}>OK</Text>
+			</TouchableOpacity>
+		</View>
     </View>
   );
 }

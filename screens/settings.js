@@ -17,19 +17,19 @@ export default function Settings({ navigation }) {
 			<View style={styles.paramCont}>
 				<SliderBox 
 					title={"Pronfondeur de la Zone (m)"} 
-					curVal={10.0} maxVal={30} 
+					curVal={10} maxVal={30} 
 					unit={'m'}
 					step={0.5}
 				/>
 				<SliderBox 
 					title={"Ratio : ligne de mouillage / profondeur"} 
-					curVal={4.0} maxVal={6} 
+					curVal={4} maxVal={6} 
 					unit={'x'}
 					step ={0.1}
 				/>
 				<SliderBox 
 					title={"Calibrage : long. chaine / tour de guindon (cm)"} 
-					curVal={10.0} maxVal={30} 
+					curVal={10} maxVal={30} 
 					unit={'cm'}
 					step ={0.1}
 				/>
