@@ -19,7 +19,7 @@ export default function CVision({ navigation }) {
 		<View style={styles.gauge}></View>
 
 		<View style={styles.btnCam}>
-			<TouchableOpacity onPress={console.log("yep")} style={styles.btnContainer}>
+			<TouchableOpacity onPress={()=>console.log("yep")} style={styles.btnContainer}>
 				<Text style={styles.btnText}>OK</Text>
 			</TouchableOpacity>
 		</View>

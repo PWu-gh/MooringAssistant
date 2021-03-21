@@ -9,6 +9,8 @@ import CVision from '../screens/cVision';
 import styles from '../styles/styles';
 import palette from "../styles/palette";
 
+import { useContext } from 'react';
+
 
 function headerStyle(Htitle, headerR){
 	return({
@@ -21,14 +23,14 @@ function headerStyle(Htitle, headerR){
 }
 
 const screens = {
-	// Home: {
-	// 	screen: Home,
-	// 	navigationOptions: headerStyle('PageOne'),
-	// },
-	// Settings: {
-	// 	screen: Settings,
-	// 	navigationOptions : headerStyle('Configuration', <View/>),
-	// },
+	Home: {
+		screen: Home,
+		navigationOptions: headerStyle('PageOne'),
+	},
+	Settings: {
+		screen: Settings,
+		navigationOptions : headerStyle('Configuration', <View/>),
+	},
 	CVision: {
 		screen: CVision,
 		navigationOptions : headerStyle('CVision', <View/>),

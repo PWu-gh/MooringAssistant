@@ -20,6 +20,9 @@ export default class SliderBox extends Component {
     }   
   }
 
+  passVal(val){
+	  this.props.val(val);
+  }
 
   render() {
     return (
@@ -27,18 +30,16 @@ export default class SliderBox extends Component {
 			<Text style={styles.textBox} >{this.state.title}</Text>
 			<View style= {styles.box_slide}>
 				<TouchableHighlight style={styles.valBox}>
-					{/* <Text style={styles.txtValBox}>{this.state.curVal}</Text> */}
 					<TextInput 
 						style={styles.txtValBox}
 						placeholder={this.state.curVal.toString()}
-						// placeholderTextColor="black"
 						keyboardType='numeric'
-						onChangeText={val => 
-							this.setState({curVal: val ? parseFloat(val) : 0
-						})}
-						// onTextChange={val => this.setState({ curVal: parseInt(val).toFixed(1) })}
+						onChangeText={val => {
+								this.setState({curVal: val ? parseFloat(val).toFixed(1) : 0});
+								this.passVal(val.toFixed(1));
+							}
+						}
 						value={ this.state.curVal.toString()}
-						
 					/>
 				</TouchableHighlight>
 
@@ -57,14 +58,17 @@ export default class SliderBox extends Component {
 						minimumValue={this.state.minVal}
 						maximumValue={this.state.maxVal}
 						value={this.state.curVal}
-						onValueChange={val => this.setState({ curVal: val.toFixed(1) })}
+						onValueChange={val => {
+								this.setState({ curVal: val.toFixed(1) });
+								this.passVal(val.toFixed(1));
+							}
+						}
 						thumbTintColor={palette.primary}
 						maximumTrackTintColor={palette.primary}
 						minimumTrackTintColor={palette.primary}
 					/>
 				</View>
 			</View>
-			
         </View> 
     );
   }

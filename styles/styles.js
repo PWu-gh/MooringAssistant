@@ -175,6 +175,7 @@ export default StyleSheet.create({
         backgroundColor: palette.black,
         width:"100%",
         aspectRatio:1,
+        maxHeight:'60%',
 
     },
     gauge:{
