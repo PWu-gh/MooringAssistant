@@ -36,7 +36,7 @@ export default class SliderBox extends Component {
 						keyboardType='numeric'
 						onChangeText={val => {
 								this.setState({curVal: val ? parseFloat(val).toFixed(1) : 0});
-								this.passVal(val.toFixed(1));
+								this.passVal(parseFloat(val).toFixed(1));
 							}
 						}
 						value={ this.state.curVal.toString()}

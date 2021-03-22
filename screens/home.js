@@ -1,6 +1,6 @@
 import React, { useContext }  from 'react';
 import {View, Text, SafeAreaView, TouchableHighlight, Image  } from "react-native";
-// import AsyncStorage  from '@react-native-community/async-storage';
+import AsyncStorage  from '@react-native-community/async-storage';
 
 import styles from "../styles/styles"
 import {DataContext} from "../components/DataContext"
@@ -23,10 +23,22 @@ export default function home({ navigation }) {
     return (
         <View style= {styles.useScreen}>
             <View style={styles.btnView}>
+                {/* <TouchableHighlight style= {styles.menuBtn} onPress= {()=> storeData('@storage','teeeee') }>
+                    <View >
+                    
+                    </View>
+                </TouchableHighlight>
+
+                <TouchableHighlight style= {styles.menuBtn} onPress= {()=> getData('calibrage') }>
+                    <View >
+                
+                    </View>
+                </TouchableHighlight> */}
+
 
                 <TouchableHighlight style= {styles.menuBtn} onPress= { goto('CVision') }>
                     <View >
-                        <Text style={styles.textStyle}> Continuer manoeuvre</Text>
+                        <Text style={styles.textHighlight}> Continuer manoeuvre</Text>
                         <View style={styles.center}>
                             <Text style={styles.textStyle}>Profondeur : {profondeur}</Text>
                             <Text style={styles.textStyle}>Ratio chaine : {ratioChaine}</Text>
@@ -40,7 +52,7 @@ export default function home({ navigation }) {
 
                 <TouchableHighlight style= {styles.menuBtn} onPress= { goto('Settings') }>
                     <View>
-                        <Text style={styles.textStyle}> Nouvelle configuration</Text>
+                        <Text style={styles.textHighlight}> Nouvelle configuration</Text>
                         <Image style={styles.centerImg} source={require('../assets/img/plus.png')}/>
                     </View>
                 </TouchableHighlight>

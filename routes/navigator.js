@@ -9,7 +9,6 @@ import CVision from '../screens/cVision';
 import styles from '../styles/styles';
 import palette from "../styles/palette";
 
-import { useContext } from 'react';
 
 
 function headerStyle(Htitle, headerR){
@@ -25,7 +24,7 @@ function headerStyle(Htitle, headerR){
 const screens = {
 	Home: {
 		screen: Home,
-		navigationOptions: headerStyle('PageOne'),
+		navigationOptions: headerStyle('PejiWan'),
 	},
 	Settings: {
 		screen: Settings,

@@ -27,6 +27,13 @@ export default StyleSheet.create({
         color: palette.textColor,
         fontSize: 16,
     },
+    textHighlight:{
+        color: palette.textColor,
+        fontSize: 18,
+        fontWeight:'bold',
+        // marginBottom:10,
+        marginVertical:10,
+    },
 
     // button Home page
     btnView:{
@@ -167,20 +174,56 @@ export default StyleSheet.create({
     },
 
     // CVision
+    infoVisCont:{
+        flex:1,
+        flexDirection:'row',
+        maxHeight:80,
+        justifyContent:'space-evenly',
+        marginVertical:'2%',
 
-    msgVis:{
-        height: 80,
+    },
+    infoVis:{
+        // flex:1,
+        width:'47%', // 2% margin like camBox
+        alignItems:'center',
+        justifyContent:'center',
+        backgroundColor:palette.secondary,
+        borderRadius:5,
+        marginVertical:'1%',
+    },
+    txtVis:{
+    },
+    valueVis:{
+        fontSize:24,
+        fontWeight:'bold',
+        color: palette.textColor,
     },
     camBox:{
         backgroundColor: palette.black,
-        width:"100%",
+        width:"96%",
         aspectRatio:1,
-        maxHeight:'60%',
-
+        alignSelf:'center',
+        borderRadius:5,
+        // marginVertical:5,
+        // maxHeight:'60%',
+    },
+    gaugeCont:{
+        height: 80,
+        alignItems:'center',
+        justifyContent:'center',
     },
     gauge:{
-        height: 50,
-        backgroundColor: palette.secondary,
+        backgroundColor: 'grey',
+        height:15,
+        width:'80%',
+        borderRadius:20,
+        overflow:'hidden',
+    },
+    gaugeProgress:{
+        backgroundColor: palette.primary,
+        height:15,
+        borderRadius:5,
+        width:'20%',
     },
 
     btnCam:{
