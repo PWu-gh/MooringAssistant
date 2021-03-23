@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react'
+import {View, Text, SafeAreaView, TouchableHighlight, Image  } from "react-native";
+
+import AsyncStorage  from '@react-native-community/async-storage';
 
 export const DataContext = React.createContext();
-const dataUpdateContext = React.createContext();
+
+let firstStart = true;
 
 export function DataProvider({ children }) {
     const [profondeur, setProfondeur] = useState(0);
@@ -9,33 +13,52 @@ export function DataProvider({ children }) {
     const [calibrage, setCalibrage] = useState(0);
     const [deploy, setDeploy] = useState(0);
 
-    // async function storeData(key, value){
-    //     try {
-    //         await AsyncStorage.setItem(key, value)
-    //     } 
-    //     catch (e) {
-    //       console.log(e);
-    //     }
-    // }
 
-    // async function getData(key) {
-    //     try {
-    //         const value = await AsyncStorage.getItem(key)
-    //         if(value !== null) {
-    //             console.log(value);
-    //         }
-    //     } 
-    //     catch(e) {
-    //         console.log(e);
-    //     }
-    // }
+    // store data in cache
+    async function storeData(key, data){
+        try {
+            await AsyncStorage.setItem(key, data)
+        } 
+        catch (e) {
+          console.log(e);
+        }
+    }
 
-    // useEffect(() => {
-    //     storeData('profondeur', profondeur);
-    //     storeData('ratioChaine', ratioChaine);
-    //     storeData('calibrage', calibrage);
-    //     storeData('deploy', deploy);
-    // });
+    // take from cache and set states
+    async function recoverData() {
+        try {
+            const val = await AsyncStorage.getItem('@data');
+
+            dataObj = JSON.parse(val)
+            setProfondeur(dataObj.prof);
+            setRatioChaine(dataObj.rati);
+            setCalibrage(dataObj.cali);
+            setDeploy(dataObj.depl);
+
+        } 
+        catch(e) {
+            console.log(e);
+        }
+    }
+    
+    // update cache on each update on (profondeur, ratio, calbirage or deploy)
+    useEffect(() => {
+        if(firstStart){
+            recoverData();
+            firstStart = false;
+        }
+        else{
+            let dataObj = {
+                prof: profondeur,
+                rati: ratioChaine,
+                cali:calibrage,
+                depl: deploy
+            }
+            storeData('@data', JSON.stringify(dataObj));
+        }
+    });
+
+    
 
 
     return (
@@ -47,7 +70,8 @@ export function DataProvider({ children }) {
         >
 
             {children}
+            
         </DataContext.Provider>
     )
-
 }
+

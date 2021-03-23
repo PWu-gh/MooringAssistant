@@ -19,23 +19,16 @@ export default function home({ navigation }) {
     const [calibrage, setCalibrage] = stateCali;
     const [deploy, setDeploy] = stateDeploy;
 
+    let recover = profondeur==0 && ratioChaine==0 && calibrage==0  && deploy==0;
 
     return (
         <View style= {styles.useScreen}>
             <View style={styles.btnView}>
-                {/* <TouchableHighlight style= {styles.menuBtn} onPress= {()=> storeData('@storage','teeeee') }>
-                    <View >
-                    
-                    </View>
-                </TouchableHighlight>
 
-                <TouchableHighlight style= {styles.menuBtn} onPress= {()=> getData('calibrage') }>
-                    <View >
-                
-                    </View>
-                </TouchableHighlight> */}
+                { recover ? 
 
-
+                <View/> 
+                    : 
                 <TouchableHighlight style= {styles.menuBtn} onPress= { goto('CVision') }>
                     <View >
                         <Text style={styles.textHighlight}> Continuer manoeuvre</Text>
@@ -45,11 +38,9 @@ export default function home({ navigation }) {
                             <Text style={styles.textStyle}>Long. / tour : {calibrage}</Text>
                             <Text style={styles.textStyle}>Long. déployé : {deploy}</Text>
                         </View>
-                    
                     </View>
-
                 </TouchableHighlight>
-
+                }
                 <TouchableHighlight style= {styles.menuBtn} onPress= { goto('Settings') }>
                     <View>
                         <Text style={styles.textHighlight}> Nouvelle configuration</Text>

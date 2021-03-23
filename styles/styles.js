@@ -177,6 +177,7 @@ export default StyleSheet.create({
     infoVisCont:{
         flex:1,
         flexDirection:'row',
+        minHeight:60,
         maxHeight:80,
         justifyContent:'space-evenly',
         marginVertical:'2%',
