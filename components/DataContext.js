@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import {View, Text, SafeAreaView, TouchableHighlight, Image  } from "react-native";
-
 import AsyncStorage  from '@react-native-community/async-storage';
 
 export const DataContext = React.createContext();
@@ -70,7 +68,7 @@ export function DataProvider({ children }) {
         >
 
             {children}
-            
+
         </DataContext.Provider>
     )
 }

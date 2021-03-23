@@ -1,6 +1,5 @@
 import React, { useContext }  from 'react';
-import {View, Text, SafeAreaView, TouchableHighlight, Image  } from "react-native";
-import AsyncStorage  from '@react-native-community/async-storage';
+import {View, Text, TouchableHighlight, Image  } from "react-native";
 
 import styles from "../styles/styles"
 import {DataContext} from "../components/DataContext"
