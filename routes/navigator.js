@@ -24,7 +24,7 @@ function headerStyle(Htitle, headerR){
 const screens = {
 	Home: {
 		screen: Home,
-		navigationOptions: headerStyle('PejiWan'),
+		navigationOptions: headerStyle('Smart Anchor'),
 	},
 	Settings: {
 		screen: Settings,

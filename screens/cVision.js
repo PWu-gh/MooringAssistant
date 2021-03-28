@@ -13,14 +13,14 @@ export default function CVision({ navigation }) {
 	const [calibrage, setCalibrage] = stateCali;
 	const [deploy, setDeploy] = stateDeploy;
 
-	let nbGuindon = (profondeur*ratioChaine /(calibrage/100)).toFixed(1); // warn: profondeur(m), calibrage(cm)
+	let nbGuindeau = (profondeur*ratioChaine /(calibrage/100)).toFixed(1); // warn: profondeur(m), calibrage(cm)
 	let lDeploy = (profondeur * ratioChaine).toFixed(1);
 	return (
 		<View style= {styles.useScreen}>
 			<View style={styles.infoVisCont}>
 				<View style={styles.infoVis}>
-					<Text style={styles.textStyle}>Tours de guindon : </Text>
-					<Text style={styles.valueVis}>{nbGuindon}</Text>
+					<Text style={styles.textStyle}>Tours de guindeau : </Text>
+					<Text style={styles.valueVis}>{nbGuindeau}</Text>
 				</View>
 				<View style={styles.infoVis}>
 					<Text style={styles.textStyle}>Longueur à déployer : {}</Text>

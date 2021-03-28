@@ -18,7 +18,7 @@ export default function Settings({ navigation }) {
 
 	const [getPro, setPro] = useState(10);
 	const [getRatio, setRatio] = useState(4);
-	const [getCali, setCali] = useState(10);
+	const [getCali, setCali] = useState(30);
 
 	function setData(){
 		setProfondeur(getPro);
@@ -46,8 +46,8 @@ export default function Settings({ navigation }) {
 					val={setRatio}
 				/>
 				<SliderBox 
-					title={"Calibrage : long. chaine / tour de guindon (cm)"} 
-					curVal={getCali} maxVal={30} 
+					title={"Calibrage : long. chaine / tour de guindeau (cm)"} 
+					curVal={getCali} maxVal={100} 
 					unit={'cm'}
 					step ={0.1}
 					val={setCali}
