@@ -8,4 +8,4 @@ In new repository
 
 ``expo init app_name``  
 copy and paste files from the git clone into app_name  
-``expo upgrade``
+in app_name ``expo upgrade``
