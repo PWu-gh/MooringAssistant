@@ -1,7 +1,7 @@
 # MooringAssistant
 how to clone on your computer
 
-git clone https://github.com/PWu-gh/MooringAssistant.git  
+``git clone https://github.com/PWu-gh/MooringAssistant.git``   
 
 
 In new repository
