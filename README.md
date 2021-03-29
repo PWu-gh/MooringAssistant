@@ -5,7 +5,8 @@ how to clone on your computer
 
 
 In new repository
-
+``
 expo init app_name  
 copy and paste files from the git clone into app_name  
 expo upgrade
+``
