@@ -209,9 +209,11 @@ export default StyleSheet.create({
         // maxHeight:'60%',
     },
     gaugeCont:{
+        flex:1,
         height: 80,
         alignItems:'center',
         justifyContent:'center',
+        width:'100%',
     },
     gauge:{
         backgroundColor: 'grey',
@@ -219,19 +221,13 @@ export default StyleSheet.create({
         width:'80%',
         borderRadius:20,
         overflow:'hidden',
+        backgroundColor:'turquoise',
     },
-    gaugeProgress:{
-        backgroundColor: palette.primary,
-        height:15,
-        borderRadius:5,
-        width:'20%',
-    },
-
     btnCam:{
         height:100,
         alignContent:'center',
         justifyContent:'center',
-    }
+    },
     
 
 
