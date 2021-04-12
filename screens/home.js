@@ -64,20 +64,37 @@ export default function home({ navigation }) {
                 <View/> 
                     : 
                 <TouchableHighlight style= {styles.menuBtn} onPress= { goto('CVision') }>
-                    <View>
-                        <Text style={styles.textStyle}>{currentDate}</Text>
-                        <Text style={styles.textHighlight}> Continuer manoeuvre</Text>
-                        <View style={styles.center}>
-                            <Text style={styles.textStyle}>Profondeur : {profondeur}</Text>
-                            <Text style={styles.textStyle}>Ratio chaine : {ratioChaine}</Text>
-                            <Text style={styles.textStyle}>Long. / tour : {calibrage}</Text>
-                            <Text style={styles.textStyle}>Long. déployé : {deploy}</Text>
+                    <View style={styles.sflex}>
+                        <View style={styles.continueMano}>
+                            <Text style={styles.textHighlight}> Continuer manoeuvre</Text>
+                            <Text style={styles.textStyle}>{currentDate}</Text>
                         </View>
+
+                        <View style={styles.textBoxL2}>
+                            <View style={styles.textBoxL1}>
+                                <Text style={styles.textStyle}>Profondeur : {profondeur}</Text>
+                            </View>
+                            <View style={styles.textBoxL1}>
+                                <Text style={styles.textStyle}>Ratio chaine : {ratioChaine}</Text>
+                            </View>
+                        </View>
+
+                        <View style={styles.textBoxL2}>
+                            <View style={styles.textBoxL1}>
+                                <Text style={styles.textStyle}>Long. / tour : {calibrage}</Text>
+                            </View>
+                            <View style={styles.textBoxL1}>
+                                <Text style={styles.textStyle}>Long. déployé : {deploy}</Text>
+                            </View>
+                        </View>
+
                     </View>
                 </TouchableHighlight>
                 }
+
+
                 <TouchableHighlight style= {styles.menuBtn} onPress= { goto('Settings') }>
-                    <View>
+                    <View style={styles.btnView}>
                         <Text style={styles.textHighlight}> Nouvelle configuration</Text>
                         <Image style={styles.centerImg} source={require('../assets/img/plus.png')}/>
                     </View>

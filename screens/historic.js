@@ -101,24 +101,24 @@ export default function historic({ navigation }) {
     for(let i = histData.length-1; i >= 0; i--){
 		HistView.push(
             <View key={histData.length-i} style= {styles.histPart}>
-                <View style={styles.histZone}>
+                <View style={styles.sflex}>
                     <View style={styles.histDate}>
-                        <Text style={styles.histDateText}>{histData.length-i}    [{histData[i].ctime}]   {histData[i].cdate}</Text>
+                        <Text style={styles.textHighlight}>{histData.length-i}    [{histData[i].ctime}]   {histData[i].cdate}</Text>
                     </View>
-                    <View style={styles.histTextLayout}>
-                        <View style={styles.histTextBox}>
-                            <Text style={styles.histText}>Profondeur : {histData[i].prof}</Text>
+                    <View style={styles.textBoxL2}>
+                        <View style={styles.textBoxL1}>
+                            <Text style={styles.textStyle}>Profondeur : {histData[i].prof}</Text>
                         </View>
-                        <View style={styles.histTextBox}>
-                            <Text style={styles.histText}>Calibrage : {histData[i].cali}</Text>
+                        <View style={styles.textBoxL1}>
+                            <Text style={styles.textStyle}>Calibrage : {histData[i].cali}</Text>
                         </View>
                     </View>
-                    <View style={styles.histTextLayout}>
-                        <View style={styles.histTextBox}>
-                            <Text style={styles.histText}>Ratio : {histData[i].rati}</Text>
+                    <View style={styles.textBoxL2}>
+                        <View style={styles.textBoxL1}>
+                            <Text style={styles.textStyle}>Ratio : {histData[i].rati}</Text>
                         </View>
-                        <View style={styles.histTextBox}>
-                            <Text style={styles.histText}>L. déployé : {histData[i].depl}</Text>
+                        <View style={styles.textBoxL1}>
+                            <Text style={styles.textStyle}>L. déployé : {histData[i].depl}</Text>
                         </View>
                     </View>
                 </View>

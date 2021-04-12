@@ -25,15 +25,14 @@ export default StyleSheet.create({
     // text color
     textStyle:{
         color: palette.textColor,
-        fontSize: 16,
-
+        fontSize: 17,
+        alignSelf:'center'
     },
     textHighlight:{
         color: palette.textColor,
         fontSize: 18,
+        alignSelf:'center',
         fontWeight:'bold',
-        // marginBottom:10,
-        marginVertical:10,
     },
 
     // button Home page
@@ -43,16 +42,14 @@ export default StyleSheet.create({
     },
 
     menuBtn:{
-        // alignSelf: stretch,
         flex:1,
         backgroundColor: palette.primary,
         maxHeight: 180,
         marginBottom: 40,
         marginHorizontal: "5%",
-        borderRadius: 10,
-        justifyContent: 'center',
-        alignItems: 'center',
-
+        borderRadius: 8,
+        overflow:'hidden',
+        
         shadowColor: "#000", // ios
         shadowOffset: {
             width: 10,
@@ -64,9 +61,26 @@ export default StyleSheet.create({
         elevation: 9, // android
     },
 
-    center:{
-        alignSelf:'center',
+    continueMano:{
+        flex: 1.6,
+        alignContent:'center',
         justifyContent:'center',
+        backgroundColor: palette.primary,
+    },
+    textBoxL2:{
+        flexDirection:'row',
+        flex:1,
+    },
+    textBoxL1:{
+        flex:1,
+        justifyContent:'center',
+        borderWidth:1,
+        borderStyle:'dashed',
+        borderRadius: 1,
+        borderColor:palette.third,
+    },
+    sflex:{
+        flex:1,
     },
 
     centerImg:{
@@ -245,7 +259,7 @@ export default StyleSheet.create({
         // width:"100%",
     },
     histPart:{
-        backgroundColor: palette.primary,
+        backgroundColor: palette.quadro,
         flex:1,
         width: "80%",
         height: 120,
@@ -264,9 +278,6 @@ export default StyleSheet.create({
         elevation: 5,
         overflow:'hidden',
     },
-    histZone:{
-        flex:1,
-    },
     histDate:{
         backgroundColor: palette.secondary,
         justifyContent:'center',
@@ -280,31 +291,7 @@ export default StyleSheet.create({
 
         elevation: 5,
     },
-    histTextLayout:{
-        flexDirection:'row',
-        flex:1,
-    },
-    histTextBox:{
-        flex:1,
-        justifyContent:'center',
-        borderWidth:1,
-        borderStyle:'dashed',
-        borderRadius: 1,
-        borderColor:palette.secondary,
-        
-    },
-    histDateText:{
-        color: palette.textColor,
-        fontSize: 18,
-        alignSelf:'center',
-        fontWeight:'bold',
 
-    },
-    histText:{
-        color: palette.textColor,
-        fontSize: 17,
-        alignSelf:'center'
-    },
 
 
 
