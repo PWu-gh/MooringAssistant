@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { AppState  } from "react-native";
 import AsyncStorage  from '@react-native-community/async-storage';
 
 export const DataContext = React.createContext();
@@ -38,6 +39,15 @@ export function DataProvider({ children }) {
             console.log(e);
         }
     }
+    const updateData = () => {
+        let dataObj = {
+            prof: profondeur,
+            rati: ratioChaine,
+            cali:calibrage,
+            depl: deploy
+        }
+        storeData('@data', JSON.stringify(dataObj));
+    }
     
     // update cache on each update on (profondeur, ratio, calbirage or deploy)
     useEffect(() => {
@@ -46,18 +56,28 @@ export function DataProvider({ children }) {
             firstStart = false;
         }
         else{
-            let dataObj = {
-                prof: profondeur,
-                rati: ratioChaine,
-                cali:calibrage,
-                depl: deploy
-            }
-            storeData('@data', JSON.stringify(dataObj));
+            updateData();
         }
     });
 
-    
+    // store historic
 
+    const appStateChange = () => {
+        AppState.addEventListener('change', handleAppStateChange);
+
+        return () => {
+        AppState.removeEventListener('change', handleAppStateChange);
+        };
+    }
+
+    const handleAppStateChange = (nextAppState) => {
+        if (nextAppState!= 'active') { // quand on sort de l'application, on sauvegarde
+            console.log('test '+ nextAppState)
+        }    
+        else{
+            console.log('test '+ nextAppState)
+        }
+    }
 
     return (
         <DataContext.Provider value={{

@@ -4,7 +4,7 @@ import styles from '../styles/styles'
 import palette from '../styles/palette';
 import { TouchableHighlight } from 'react-native-gesture-handler';
 
-export default function Gauge({ gaugeValue, gaugeMax }){
+export default function Gauge({ gaugeValue, gaugeMax, profond }){
 	const percentGauge = gaugeValue*100/gaugeMax;
 	const dynamicStyle = StyleSheet.create({
 		progressGauge:{
@@ -14,13 +14,19 @@ export default function Gauge({ gaugeValue, gaugeMax }){
 			width: percentGauge+'%',
 		}
 	})
+	let valRatio = gaugeValue/ profond;
 
 	return(
 		<View style={styles.gaugeCont}>
+			<Text style={styles.gaugeVal}>{gaugeValue} (x{valRatio}) </Text>
 			<View style={styles.gauge}>
 				<View style={dynamicStyle.progressGauge}></View>
 			</View>
-			<Text >{gaugeValue}</Text>
+
+			<View style={styles.gaugeLegend}>
+				<Text >0</Text>
+				<Text >{gaugeMax}</Text>
+			</View>		
 		</View>
 	)
 

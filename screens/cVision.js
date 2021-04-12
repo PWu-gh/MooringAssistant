@@ -6,7 +6,7 @@ import {DataContext} from "../components/DataContext"
 import Gauge from "../components/gauge"
 
 export default function CVision({ navigation }) {
-	const pressHandler = () => navigation.goBack();
+	const pressHandler = () => navigation.navigation.navigate('Home');
 
   	// context val
 	const { stateProf, stateCali, stateRatio, stateDeploy } = useContext(DataContext);
@@ -31,9 +31,11 @@ export default function CVision({ navigation }) {
 				</View>
 			</View>
 
+			{/* TO DO */}
 			<View style={styles.camBox}></View>
 
-			<Gauge gaugeValue={deploy} gaugeMax={lDeploy}></Gauge>
+			{/* Replace deploy by computer vision value */}
+			<Gauge gaugeValue={deploy} gaugeMax={lDeploy} profond={profondeur}></Gauge>
 
 			<View style={styles.btnCam}>
 				<TouchableOpacity onPress={()=> setDeploy(deploy+5)} style={styles.btnContainer}>

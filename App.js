@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import 'react-native-gesture-handler';
-import {StatusBar, SafeAreaView , Button} from "react-native";
+import {StatusBar, SafeAreaView , Button, AppState} from "react-native";
 import Navigator from './routes/navigator';
 
 import styles from "./styles/styles";

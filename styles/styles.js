@@ -26,6 +26,7 @@ export default StyleSheet.create({
     textStyle:{
         color: palette.textColor,
         fontSize: 16,
+
     },
     textHighlight:{
         color: palette.textColor,
@@ -210,7 +211,8 @@ export default StyleSheet.create({
     },
     gaugeCont:{
         flex:1,
-        height: 80,
+        // height: 80,
+        maxHeight:100,
         alignItems:'center',
         justifyContent:'center',
         width:'100%',
@@ -221,14 +223,89 @@ export default StyleSheet.create({
         width:'80%',
         borderRadius:20,
         overflow:'hidden',
-        backgroundColor:'turquoise',
+        backgroundColor:'grey',
     },
     btnCam:{
-        height:100,
+        height: 100,
         alignContent:'center',
         justifyContent:'center',
     },
-    
+    gaugeVal:{
+        fontWeight: 'bold',
+        fontSize:18,
+    },
+    gaugeLegend:{
+        width:"80%",
+        flexDirection: 'row',
+        justifyContent:'space-between'
+    },
+    histScroll:{
+        marginTop:2,
+        flex:1,
+        // width:"100%",
+    },
+    histPart:{
+        backgroundColor: palette.primary,
+        flex:1,
+        width: "80%",
+        height: 120,
+        borderRadius: 4,
+        margin:10,
+        alignSelf:'center',
+
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+
+        elevation: 5,
+        overflow:'hidden',
+    },
+    histZone:{
+        flex:1,
+    },
+    histDate:{
+        backgroundColor: palette.secondary,
+        justifyContent:'center',
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+
+        elevation: 5,
+    },
+    histTextLayout:{
+        flexDirection:'row',
+        flex:1,
+    },
+    histTextBox:{
+        flex:1,
+        justifyContent:'center',
+        borderWidth:1,
+        borderStyle:'dashed',
+        borderRadius: 1,
+        borderColor:palette.secondary,
+        
+    },
+    histDateText:{
+        color: palette.textColor,
+        fontSize: 18,
+        alignSelf:'center',
+        fontWeight:'bold',
+
+    },
+    histText:{
+        color: palette.textColor,
+        fontSize: 17,
+        alignSelf:'center'
+    },
+
 
 
 })

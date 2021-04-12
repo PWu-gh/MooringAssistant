@@ -5,6 +5,7 @@ import { createAppContainer } from 'react-navigation';
 import Home from '../screens/home';
 import Settings from '../screens/settings';
 import CVision from '../screens/cVision';
+import Historic from '../screens/historic';
 
 import styles from '../styles/styles';
 import palette from "../styles/palette";
@@ -34,6 +35,10 @@ const screens = {
 		screen: CVision,
 		navigationOptions : headerStyle('CVision', <View/>),
 	},
+	Historic:{
+		screen: Historic,
+		navigationOptions : headerStyle('Historique', <View/>),
+	}
 };
 
 
