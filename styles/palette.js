@@ -3,6 +3,7 @@ export default{
     secondary: '#39A690',
     third:'#394FA6',
     quadro:'#4895C9',
+    rope: '#ceb78b',
     colorStatus : '#01579B',
     colorBack: '#E0F7FA',
     textColor: '#E8F5E9',

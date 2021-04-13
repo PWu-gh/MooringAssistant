@@ -10,6 +10,12 @@ export default function home({ navigation }) {
         pressHandler = ()=> navigation.navigate(destination);
         return pressHandler;
     }
+
+    // navigation.setOptions({
+    //     'title': 'Other title'
+    // })
+
+
     // useEffect(() => {
     //     // console.log(AppState._supportedEvents)
 	// 	appStateChange;
@@ -33,7 +39,6 @@ export default function home({ navigation }) {
 	// 	  console.log('test '+ nextAppState)
 	//   }
 	// }
-
 
     // context val
     const { stateProf, stateCali, stateRatio, stateDeploy } = useContext(DataContext);
@@ -69,6 +74,8 @@ export default function home({ navigation }) {
                             <Text style={styles.textHighlight}> Continuer manoeuvre</Text>
                             <Text style={styles.textStyle}>{currentDate}</Text>
                         </View>
+                        <Image style={styles.imgRope} source={require('../assets/img/rope.png')}/>
+
 
                         <View style={styles.textBoxL2}>
                             <View style={styles.textBoxL1}>
@@ -100,7 +107,7 @@ export default function home({ navigation }) {
                     </View>
                 </TouchableHighlight>
 
-                <TouchableHighlight style= {styles.menuBtn} onPress= { goto('Historic') }>
+                <TouchableHighlight style= {styles.menuBtn} onPress={() => navigation.setOptions({ title: 'Updated!' })}>
                     <View>
                         <Text style={styles.textStyle}>hist</Text>
                     </View>

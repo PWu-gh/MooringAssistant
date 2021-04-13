@@ -48,7 +48,7 @@ export default StyleSheet.create({
         marginBottom: 40,
         marginHorizontal: "5%",
         borderRadius: 8,
-        overflow:'hidden',
+        // overflow:'hidden',
         
         shadowColor: "#000", // ios
         shadowOffset: {
@@ -66,6 +66,7 @@ export default StyleSheet.create({
         alignContent:'center',
         justifyContent:'center',
         backgroundColor: palette.primary,
+        borderBottomWidth:1,
     },
     textBoxL2:{
         flexDirection:'row',
@@ -74,7 +75,7 @@ export default StyleSheet.create({
     textBoxL1:{
         flex:1,
         justifyContent:'center',
-        borderWidth:1,
+        // borderWidth:1,
         borderStyle:'dashed',
         borderRadius: 1,
         borderColor:palette.third,
@@ -89,7 +90,12 @@ export default StyleSheet.create({
         height: 60,
         margin:10,
     },
-
+    imgRope:{
+        width: '105%',
+        resizeMode: 'contain',
+        position: 'absolute',
+        top:'40%', // flex 1.6/2
+    },  
 
     // Settings
     // view part sizing
@@ -223,35 +229,10 @@ export default StyleSheet.create({
         // marginVertical:5,
         // maxHeight:'60%',
     },
-    gaugeCont:{
-        flex:1,
-        // height: 80,
-        maxHeight:100,
-        alignItems:'center',
-        justifyContent:'center',
-        width:'100%',
-    },
-    gauge:{
-        backgroundColor: 'grey',
-        height:15,
-        width:'80%',
-        borderRadius:20,
-        overflow:'hidden',
-        backgroundColor:'grey',
-    },
     btnCam:{
         height: 100,
         alignContent:'center',
         justifyContent:'center',
-    },
-    gaugeVal:{
-        fontWeight: 'bold',
-        fontSize:18,
-    },
-    gaugeLegend:{
-        width:"80%",
-        flexDirection: 'row',
-        justifyContent:'space-between'
     },
     histScroll:{
         marginTop:2,
