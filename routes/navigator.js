@@ -49,10 +49,10 @@ let hist = (
 )
 
 const screens = {
-	Home: {
-		screen: Home,
-		navigationOptions: headerStyle('Smart Anchor',hist),
-	},
+	// Home: {
+	// 	screen: Home,
+	// 	navigationOptions: headerStyle('Smart Anchor',hist),
+	// },
 	Settings: {
 		screen: Settings,
 		navigationOptions : headerStyle('Configuration'),

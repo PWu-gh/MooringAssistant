@@ -28,7 +28,7 @@ export default class SliderBox extends Component {
 	bubbleInput(){
 		return(
 			<View style={styles.valBox}>
-				<Image style={styles.bubble}source={require('../assets/img/bubble.png')}/>
+				<Image style={styles.bubble}source={require('../assets/img/bubble_vib.png')}/>
 				<TextInput 
 						style={styles.txtValBox}
 						// placeholder={this.state.curVal.toString()}
@@ -64,12 +64,12 @@ export default class SliderBox extends Component {
 				<View style={styles.sliderContainer}>
 					<View style={styles.legendCon}>
 						<View style={styles.sideBubble}>
-							<Image style={styles.bubble}source={require('../assets/img/bubble.png')}/>
+							<Image style={styles.bubble}source={require('../assets/img/bubble_vib.png')}/>
 							<Text style={styles.sliderTxtsub} >{this.state.minVal +this.state.unit}</Text>
 						</View>
 						{this.bubbleInput()}
 						<View style={styles.sideBubble}>
-							<Image style={styles.bubble} source={require('../assets/img/bubble.png')}/>
+							<Image style={styles.bubble} source={require('../assets/img/bubble_vib.png')}/>
 							<Text style={styles.sliderTxtsub} >{this.state.maxVal +this.state.unit}</Text>
 						</View>
 

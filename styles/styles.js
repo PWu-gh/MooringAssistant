@@ -201,8 +201,8 @@ export default StyleSheet.create({
     },
     bubble:{
         position:'absolute',
-        height:'114%',
-        width:'114%',
+        height:'110%',
+        width:'110%',
         resizeMode: 'contain',
     },
     txtValBox:{
