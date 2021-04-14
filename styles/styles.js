@@ -100,50 +100,36 @@ export default StyleSheet.create({
     // Settings
     // view part sizing
     paramCont:{
-        flex:2,
+        marginTop:10,
         justifyContent: 'center',
 
     },
     btnParamCont:{
         flex:1,
         justifyContent: 'center',
-        bottom:'6%',
+        alignSelf:'center',
+        width:200,
+        //shadow
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 4,
+        },
+        shadowOpacity: 0.30,
+        shadowRadius: 4.65,
+
+        elevation: 8,
     },
 
     // Slider
     Box:{
         paddingHorizontal: '2%',
         alignContent:'center',
-        margin: '1%',
         marginHorizontal:'4%',
-        marginVertical:10,
-
-    },
-    textBox:{
-        fontWeight:'bold',
-        color:palette.black,
-        marginBottom:2,
-    },
-
-    box_slide:{
-        // flex:1,
-        // maxHeight:100,
-        flexDirection: 'row',
-        justifyContent:'center',
-        alignItems:'center',
-    },
-    valBox:{
-        width: '20%',
-        marginRight:10,
-        minWidth: 60,
-        maxWidth:80,
-        aspectRatio:1,
-        backgroundColor: palette.white,
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius:10,
-        borderWidth:1,
-        borderColor: palette.primary,
+        marginTop:10,
+        backgroundColor: palette.secondary,
+        borderRadius:4,
+        padding:4,
 
         //shadow
         shadowColor: "#000",
@@ -155,32 +141,109 @@ export default StyleSheet.create({
         shadowRadius: 4.65,
 
         elevation: 8,
+    },
 
+    confRope:{
+        width: '100%',
+        resizeMode: 'contain',
+        position: 'absolute',
+        right:'96%',
+        top:97, 
+        zIndex:1,
+    },
+    textBox:{
+        fontSize:17,
+        color:palette.whiteSand,
+        marginBottom:2,
+        alignSelf:'center',
+        fontWeight:'bold',
+        marginBottom:10,
+        marginTop:1,
+    },
+
+    box_slide:{
+        flexDirection: 'row',
+        justifyContent:'center',
+        alignItems:'center',
+    },
+    valBox:{
+        width: '16%',
+        marginRight:10,
+        minWidth: 60,
+        maxWidth:70,
+        aspectRatio:1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius:50,
+        backgroundColor: palette.lightSand,
+        alignSelf:'center',
+
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+
+        elevation: 5,
+    },
+    sideBubble:{
+        width:45,
+        aspectRatio:1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius:50,
+        backgroundColor: palette.rope,
+        alignSelf:'center',
+        top:8,
+
+    },
+    bubble:{
+        position:'absolute',
+        height:'114%',
+        width:'114%',
+        resizeMode: 'contain',
     },
     txtValBox:{
         fontSize: 20,
         textAlign:'center',
+        fontWeight:'bold',
     },
     sliderContainer: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        maxWidth:300,
+        maxWidth:400,
         // backgroundColor: '#000',
       },
-    textCon: {
-        width: '96%',
+    legendCon: {
+        width: '100%',
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+    },
+    sliderTxt:{
+        fontSize:18,
+        top:-4,
+        fontWeight:'bold',
+    },
+    sliderTxtsub:{
+        fontSize:15,
+        fontWeight:'bold',
+        // top:-5,
     },
     slider:{
         width: '100%',
+        height:20, // 40 height of thumb icon by default
     },
+
+
 
     // btn
 
     btnContainer: {
-        elevation: 8,
+        elevation: -1,
+        zIndex: -1, // test on ios => img blocks btn click ?
         backgroundColor: palette.primary,
         borderRadius: 5,
         paddingVertical: 20,

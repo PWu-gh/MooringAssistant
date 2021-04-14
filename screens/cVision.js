@@ -15,8 +15,8 @@ export default function CVision({ navigation }) {
 	const [calibrage, setCalibrage] = stateCali;
 	const [deploy, setDeploy] = stateDeploy;
 
-	let nbGuindeau = (profondeur*ratioChaine /(calibrage/100)).toFixed(1); // warn: profondeur(m), calibrage(cm)
-	let lDeploy = (profondeur * ratioChaine).toFixed(1);
+	let nbGuindeau = Number((profondeur*ratioChaine /(calibrage/100)).toFixed(1)); // warn: profondeur(m), calibrage(cm)
+	let lDeploy = Number((profondeur * ratioChaine).toFixed(1));
 
 	return (
 		<View style= {styles.useScreen}>

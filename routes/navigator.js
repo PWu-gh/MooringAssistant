@@ -13,23 +13,17 @@ import { TouchableHighlight } from 'react-native-gesture-handler';
 
 
 
-function headerStyle(Htitle, headerR, headerL){
-	if(headerL != null){ // pour premiere page( sans goBack)
-		return({
-			title: Htitle,
-			headerStyle: styles.header,
-			headerTitleStyle: styles.headerTitle,
-			headerTintColor: palette.white,
-			headerRight: () => headerR, // null or view or method
-			headerLeft:()=> headerL,
-		})
-	}
+function headerStyle(Htitle, headerR=null){
 	return({
 		title: Htitle,
 		headerStyle: styles.header,
 		headerTitleStyle: styles.headerTitle,
 		headerTintColor: palette.white,
 		headerRight: () => headerR, // null or view or method
+		headerTitleContainerStyle: {
+			left: 0,
+			right: 0,
+		}
 	})
 }
 
@@ -57,19 +51,19 @@ let hist = (
 const screens = {
 	Home: {
 		screen: Home,
-		navigationOptions: headerStyle('Smart Anchor',hist , <View/>),
+		navigationOptions: headerStyle('Smart Anchor',hist),
 	},
 	Settings: {
 		screen: Settings,
-		navigationOptions : headerStyle('Configuration', <View/>),
+		navigationOptions : headerStyle('Configuration'),
 	},
 	CVision: {
 		screen: CVision,
-		navigationOptions : headerStyle('CVision', <View/>),
+		navigationOptions : headerStyle('CVision'),
 	},
 	Historic:{
 		screen: Historic,
-		navigationOptions : headerStyle('Historique', <View/>),
+		navigationOptions : headerStyle('Historique'),
 	}
 };
 

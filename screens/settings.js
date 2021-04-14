@@ -1,5 +1,5 @@
 import React, {useContext, useState} from 'react';
-import {View, Text, TouchableOpacity } from 'react-native';
+import {View, Text, TouchableOpacity, Image } from 'react-native';
 
 import styles from "../styles/styles";
 import SliderBox from "../components/sliderBox";
@@ -19,12 +19,13 @@ export default function Settings({ navigation }) {
 	const [getPro, setPro] = useState(10);
 	const [getRatio, setRatio] = useState(4);
 	const [getCali, setCali] = useState(30);
+	const [getDep, setDep] = useState(0);
 
 	function setData(){
 		setProfondeur(getPro);
 		setRatioChaine(getRatio);
 		setCalibrage(getCali);
-		setDeploy(0);
+		setDeploy(getDep);
 	}
 
 	return (
@@ -34,23 +35,27 @@ export default function Settings({ navigation }) {
 				<SliderBox 
 					title={"Pronfondeur de la Zone (m)"} 
 					curVal={getPro} maxVal={30} 
-					unit={'m'}
 					step={0.5}
 					val={setPro}
 				/>
 				<SliderBox 
 					title={"Ratio : ligne de mouillage / profondeur"} 
 					curVal={getRatio} maxVal={6} 
-					unit={'x'}
+					unit={' ×'}
 					step ={0.1}
 					val={setRatio}
 				/>
 				<SliderBox 
-					title={"Calibrage : long. chaine / tour de guindeau (cm)"} 
+					title={"Calibrage : Lg. chaine / tour guindeau (cm)"} 
 					curVal={getCali} maxVal={100} 
-					unit={'cm'}
 					step ={0.1}
 					val={setCali}
+				/>
+				<SliderBox 
+					title={"Longueur déployé (m)"} 
+					curVal={getDep} maxVal={100} 
+					step ={0.1}
+					val={setDep}
 				/>
 			</View>
 			<View style={styles.btnParamCont}>
@@ -61,7 +66,7 @@ export default function Settings({ navigation }) {
 					style={styles.btnContainer}
 				>
 
-					<Text style={styles.btnText}>OK</Text>
+					<Text style={styles.btnText}>Go !</Text>
 
 				</TouchableOpacity>
 			</View>

@@ -107,7 +107,7 @@ export default function home({ navigation }) {
                     </View>
                 </TouchableHighlight>
 
-                <TouchableHighlight style= {styles.menuBtn} onPress={() => navigation.setOptions({ title: 'Updated!' })}>
+                <TouchableHighlight style= {styles.menuBtn} onPress={goto('Historic')}>
                     <View>
                         <Text style={styles.textStyle}>hist</Text>
                     </View>

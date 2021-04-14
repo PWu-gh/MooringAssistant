@@ -38,18 +38,15 @@ export default function Gauge({ gaugeValue, gaugeMax, profond }){
 			flexDirection: 'row',
 			justifyContent:'space-between'
 		},
-		ancorBox:{
+		anchorBox:{
 			position:'absolute',
 			left: percentGauge+'%',
-			elevation: 9, // android
-			zIndex: 50,
 
 		},
-		ancor:{
+		anchor:{
 			position: 'absolute',
-			height:60,
+			height:80,
 			resizeMode: 'contain',
-
 			top: 3,
 			left: -70,
 		}
@@ -61,11 +58,11 @@ export default function Gauge({ gaugeValue, gaugeMax, profond }){
 			<Text style={dynamicStyle.gaugeVal}>{gaugeValue} (x{valRatio}) </Text>
 			<View style={dynamicStyle.gauge}>
 				<View style={dynamicStyle.progressGauge}></View>
-				<View style={dynamicStyle.ancorBox}>
-					<Image style={dynamicStyle.ancor} source={require('../assets/img/ancor_dim.png')}/>		
+				<View style={dynamicStyle.anchorBox}>
+					<Image style={dynamicStyle.anchor} source={require('../assets/img/anchor2.png')}/>		
 				</View>
 			</View>
-			{/* <Image style={dynamicStyle.ancor} source={require('../assets/img/ancre.png')}/> */}
+			{/* <Image style={dynamicStyle.anchor} source={require('../assets/img/ancre.png')}/> */}
 
 			<View style={dynamicStyle.gaugeLegend}>
 				<Text >0</Text>

@@ -4,6 +4,8 @@ export default{
     third:'#394FA6',
     quadro:'#4895C9',
     rope: '#ceb78b',
+    lightSand:'#EDE4D4',
+    whiteSand:'#FBF9F6',
     colorStatus : '#01579B',
     colorBack: '#E0F7FA',
     textColor: '#E8F5E9',
