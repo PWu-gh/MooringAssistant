@@ -1,6 +1,6 @@
 export default{
     primary: '#287DB7',     // primary color blue 
-    secondary: '#2B9687',   // secondary green blue
+    secondary: '#219887',   // secondary green blue
     third:'#256D97',        //  dark grey blue
     rope: '#ceb78b',        // light brown
     lightSand:'#EDE4D4',    // Light beige
