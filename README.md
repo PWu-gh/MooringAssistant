@@ -1,5 +1,13 @@
 # MooringAssistant
-how to clone on your computer
+
+To test on Expo GO App, dowloadable on iOS and Android:
+
+scan the QR code on : https://expo.io/@pwu_dev/projects/MooringA
+
+
+
+
+To clone the project on your computer:
 
 ``git clone https://github.com/PWu-gh/MooringAssistant.git``   
 
@@ -15,6 +23,6 @@ To install all the dependencies.
 Then : 
 ``expo start``
 
-To test on Expo GO App, dowloadable on iOS and Android:
 
-scan the QR code on : https://expo.io/@pwu_dev/projects/MooringA
+Required: nodeJS and expo-cli
+

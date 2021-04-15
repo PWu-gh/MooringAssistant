@@ -29,7 +29,7 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "description": "",
+    "description": "Mooring Assistant app interface.",
     "githubUrl": "https://github.com/PWu-gh/MooringAssistant"
   }
 }
