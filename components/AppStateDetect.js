@@ -1,8 +1,9 @@
 import { useContext, useEffect, useRef, useState } from 'react';
 import { AppState} from 'react-native';
 import {DataContext} from "./DataContext"
-import AsyncStorage  from '@react-native-community/async-storage';
 
+// import AsyncStorage  from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 export default function AppStateDetect() {
 	// context val ( time et date, de la dernière modification de valeur)
 	const { stateProf, stateCali, stateRatio, stateDeploy , time, date} = useContext(DataContext);

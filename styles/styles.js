@@ -402,7 +402,4 @@ export default StyleSheet.create({
         left:10,
     },
 
-
-
-
 })

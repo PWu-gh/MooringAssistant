@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { AppState  } from "react-native";
-import AsyncStorage  from '@react-native-community/async-storage';
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
 export const DataContext = React.createContext();
 
 let firstStart = true;
@@ -34,12 +32,15 @@ export function DataProvider({ children }) {
     async function recoverData() {
         try {
             const val = await AsyncStorage.getItem('@data');
-
+            
             dataObj = JSON.parse(val)
-            setProfondeur(dataObj.prof);
-            setRatioChaine(dataObj.rati);
-            setCalibrage(dataObj.cali);
-            setDeploy(dataObj.depl);
+            if(dataObj != null){
+                setProfondeur(dataObj.prof);
+                setRatioChaine(dataObj.rati);
+                setCalibrage(dataObj.cali);
+                setDeploy(dataObj.depl);
+            }
+
         } 
         catch(e) {
             console.log(e);

@@ -13,7 +13,7 @@ export default class CameraComp extends Component {
 	}
 
 	async componentDidMount() {
-		const { status } = await Permissions.askAsync(Permissions.CAMERA);
+		const { status } = await Permissions.askAsync(Permissions.CAMERA)
 		this.setState({ hasPermission: status === 'granted' });
 	}
 

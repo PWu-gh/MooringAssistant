@@ -1,7 +1,6 @@
 import React, { useState}  from 'react';
 import {View, Text, ImageBackground  } from "react-native";
-import AsyncStorage  from '@react-native-community/async-storage';
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import styles from "../styles/styles"
 import { ScrollView } from 'react-native-gesture-handler';
 
