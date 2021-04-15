@@ -39,10 +39,11 @@ export default function Gauge({ gaugeValue, gaugeMax, profond }){
 			fontFamily: fontStyle,
 		},
 		gaugeLegend:{
-			width:"84%",
+			width:"85%",
 			flexDirection: 'row',
 			justifyContent:'space-between',
-			bottom:35,
+			bottom:40,
+			left:3,
 		},
 		textLegend:{
 			fontWeight: 'bold',
@@ -68,14 +69,15 @@ export default function Gauge({ gaugeValue, gaugeMax, profond }){
 	return(
 		<View style={dynamicStyle.gaugeCont}>
 			<Text style={dynamicStyle.gaugeVal}>{gaugeValue}m  (x{valRatio}) </Text>
+			{/* Dynamic gauge */}
 			<View style={dynamicStyle.gauge}>
 				<View style={dynamicStyle.progressGauge}></View>
 				<View style={dynamicStyle.anchorBox}>
 					<Image style={dynamicStyle.anchor} source={require('../assets/img/anchor_draw.png')}/>		
 				</View>
 			</View>
-			{/* <Image style={dynamicStyle.anchor} source={require('../assets/img/ancre.png')}/> */}
 
+			{/* Max and min of the gauge */}
 			<View style={dynamicStyle.gaugeLegend}>
 				<Text style={dynamicStyle.textLegend}>0</Text>
 				<Text style={dynamicStyle.textLegend}>{gaugeMax}</Text>

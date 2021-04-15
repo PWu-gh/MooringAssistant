@@ -1,6 +1,5 @@
-import React from 'react';
 import { createStackNavigator } from 'react-navigation-stack';
-import { createAppContainer, NavigationEvents } from 'react-navigation';
+import { createAppContainer} from 'react-navigation';
 import Home from '../screens/home';
 import Settings from '../screens/settings';
 import CVision from '../screens/cVision';
@@ -9,7 +8,7 @@ import Historic from '../screens/historic';
 import styles from '../styles/styles';
 import palette from "../styles/palette";
 
-
+// Function to set headerStyles
 function headerStyle(Htitle, headerR=null){
 	return({
 		title: Htitle,
@@ -24,6 +23,7 @@ function headerStyle(Htitle, headerR=null){
 	})
 }
 
+// Screens definitions
 const screens = {
 	Home: {
 		screen: Home,

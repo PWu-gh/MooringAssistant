@@ -36,7 +36,6 @@ export default StyleSheet.create({
         fontSize: 17,
         alignSelf:'center',
         fontFamily: fontStyle,
-
     },
     textHighlight:{
         color: palette.lightSand,
@@ -47,7 +46,7 @@ export default StyleSheet.create({
     },
     
 
-    // button Home page
+    /////////////////////  Button Layout ////////////////////////////
     btnView:{
         flex:1,
         justifyContent: "center",
@@ -72,7 +71,7 @@ export default StyleSheet.create({
 
         elevation: 9, // android
     },
-
+    /////////////////////  image historic ////////////////////////////
     backtimeBtn:{
         right:"4%",
         top:"2%",
@@ -84,12 +83,14 @@ export default StyleSheet.create({
         backgroundColor:palette.secondary,
         borderRadius:50,
     },
+
     backtime:{
         width: '60%',
         height: "60%",
         resizeMode: 'contain',
     },
 
+    /////////////////////  Button ////////////////////////////
     continueMano:{
         flex: 1.6,
         alignContent:'center',
@@ -168,8 +169,8 @@ export default StyleSheet.create({
         elevation: 8,
     },
 
-    // Slider
-    Box:{
+    //////////////////// Slider styling ////////////////////////
+    BoxSlider:{
         paddingHorizontal: '2%',
         alignContent:'center',
         marginHorizontal:'4%',
@@ -195,17 +196,15 @@ export default StyleSheet.create({
         resizeMode: 'contain',
         position: 'absolute',
         right:'96%',
-        top:97, 
+        top:88, 
         zIndex:1,
     },
     textBox:{
         fontSize:17,
         color:palette.textColor,
-        marginBottom:2,
-        alignSelf:'center',
-        // fontWeight:'bold',
-        marginBottom:10,
+        marginBottom:3,
         marginTop:1,
+        alignSelf:'center',
         fontFamily: fontStyle,
     },
 
@@ -289,11 +288,8 @@ export default StyleSheet.create({
     },
 
 
-
-    // btn
-
+    ////////////////// Buttons ////////////////////////
     btnContainer: {
-
         backgroundColor: palette.primary,
         borderRadius: 5,
         paddingVertical: 20,
@@ -308,7 +304,7 @@ export default StyleSheet.create({
         fontFamily: fontStyle,
     },
 
-    // CVision
+    ////////////////////// CVision Parts ///////////////////////////
     infoVisCont:{
         flex:1,
         flexDirection:'row',
@@ -318,6 +314,7 @@ export default StyleSheet.create({
         marginVertical:'2%',
 
     },
+    ///////////////  Info box on top at CVision   /////////////////
     infoVis:{
         // flex:1,
         width:'47%', // 2% margin like camBox
@@ -333,15 +330,20 @@ export default StyleSheet.create({
         color: palette.textColor,
         fontFamily: fontStyle,
     },
+
+    ///////////// Camera container ////////////////
     camBox:{
-        backgroundColor: palette.black,
-        width:"96%",
+        // backgroundColor: palette.black,
+        width:"90%",
         aspectRatio:1,
         alignSelf:'center',
-        borderRadius:5,
-        // marginVertical:5,
-        // maxHeight:'60%',
+        borderWidth: 5,
+        borderColor: palette.primary,
+        borderRadius:1,
+        borderStyle: 'dashed',
+
     },
+    ///////// Button bellow the cam ///////////////
     btnCam:{
         flex:1,
         height: 100,
@@ -351,12 +353,11 @@ export default StyleSheet.create({
         alignSelf:'center',
         bottom: 10,
     },
-    // Historic
+
+    //////////// Historic /////////////////////
 
     histScroll:{
-        // marginTop:2,
         flex:1,
-        // width:"100%",
     },
     histPart:{
         backgroundColor: palette.primary,

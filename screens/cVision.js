@@ -1,14 +1,15 @@
-import React, {useContext, useState, useEffect} from 'react';
+import React, {useContext} from 'react';
 import {View, Text, TouchableOpacity, ImageBackground } from 'react-native';
 
 import styles from "../styles/styles";
 import {DataContext} from "../components/DataContext"
 import Gauge from "../components/gauge"
+import CameraComp from '../components/CameraComp';
 
 export default function CVision({ navigation }) {
 	const pressHandler = () => navigation.navigation.navigate('Home');
 
-  	// context val
+  	// Variable de DataContext (Utilisation: Historique (AsyncStorage))
 	const { stateProf, stateCali, stateRatio, stateDeploy } = useContext(DataContext);
 	const [profondeur, setProfondeur] = stateProf;
 	const [ratioChaine, setRatioChaine] = stateRatio;
@@ -22,7 +23,7 @@ export default function CVision({ navigation }) {
 		<ImageBackground source={require('../assets/img/backwater.png')} style= {styles.useScreen}>
 			<View style={styles.infoVisCont}>
 				<View style={styles.infoVis}>
-					<Text style={styles.textStyle}>Longueur à déployer : {}</Text>
+					<Text style={styles.textStyle}>A déployer : {}</Text>
 					<Text style={styles.valueVis}>{lDeploy}m</Text>
 				</View>
 				<View style={styles.infoVis}>
@@ -31,12 +32,21 @@ export default function CVision({ navigation }) {
 				</View>
 			</View>
 
-			{/* TO DO */}
-			<View style={styles.camBox}></View>
+			{/* ///////////// Partie a compléter ///////////
+				- implémentation du computer vision
+				- recupération de la valeur 
+				- donner la valeur a deploy ( setDeploy() )
+			
+			*/}
 
-			{/* Replace deploy by computer vision value */}
+			<View style={styles.camBox}>
+				<CameraComp></CameraComp>
+			</View>
+
+			{/* Gauge implémentation fonctionnelle */}
 			<Gauge gaugeValue={deploy} gaugeMax={lDeploy} profond={profondeur}></Gauge>
 
+			{/* Ne pas oublier de modifier le OnPress pour commencer/arreter le computer vision */}
 			<View style={styles.btnCam}>
 				<TouchableOpacity onPress={()=> setDeploy(deploy+2)} style={styles.btnContainer}>
 				<Text style={styles.btnText}>Start</Text>

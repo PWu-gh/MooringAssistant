@@ -1,5 +1,5 @@
 import React, {useContext, useState} from 'react';
-import {View, Text, TouchableOpacity, Image , ImageBackground} from 'react-native';
+import {View, Text, TouchableOpacity, ImageBackground} from 'react-native';
 
 import styles from "../styles/styles";
 import SliderBox from "../components/sliderBox";
@@ -16,6 +16,7 @@ export default function Settings({ navigation }) {
 	const [calibrage, setCalibrage] = stateCali;
 	const [deploy, setDeploy] = stateDeploy;
 
+	//  create a hook to take the value inside the Slider component
 	const [getPro, setPro] = useState(10);
 	const [getRatio, setRatio] = useState(4);
 	const [getCali, setCali] = useState(30);
@@ -29,8 +30,8 @@ export default function Settings({ navigation }) {
 	}
 
 	return (
+		// generate four sliders
 		<ImageBackground source={require('../assets/img/backwater.png')} style= {styles.useScreen}>
-
 			<View style={styles.paramCont}>
 				<SliderBox 
 					title={"Pronfondeur de la Zone (m)"} 
@@ -39,7 +40,7 @@ export default function Settings({ navigation }) {
 					val={setPro}
 				/>
 				<SliderBox 
-					title={"Ratio : Chaine / Profondeur"} 
+					title={"Ratio : Chaine : Profondeur"} 
 					curVal={getRatio} maxVal={6} 
 					unit={' ×'}
 					step ={0.1}
@@ -58,6 +59,8 @@ export default function Settings({ navigation }) {
 					val={setDep}
 				/>
 			</View>
+
+			{/* button to validate values and set them globally */}
 			<View style={styles.btnParamCont}>
 				<TouchableOpacity 
 					onPress={() => 	{	setData();
@@ -65,11 +68,12 @@ export default function Settings({ navigation }) {
 					}} 
 					style={styles.btnContainer}
 				>
-
 					<Text style={styles.btnText}>Go !</Text>
-
 				</TouchableOpacity>
 			</View>
+
+
+
 		</ImageBackground>
 	);
 }

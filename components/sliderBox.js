@@ -25,6 +25,7 @@ export default class SliderBox extends Component {
 		this.props.val(val);
 	}
 
+	// Keyboard input inside the bubble
 	bubbleInput(){
 		return(
 			<View style={styles.valBox}>
@@ -36,7 +37,7 @@ export default class SliderBox extends Component {
 						onChangeText={val => {
 								this.setState({curVal: val ? Number(parseFloat(val).toFixed(1)): 0});
 								this.passVal(Number(parseFloat(val).toFixed(1)));
-								if(val[val.length-1] == "."){
+								if(val[val.length-1] == "." || val[val.length-1] == ","){
 									this.setState({ dot: "." });
 								}else{
 									this.setState({ dot: "" });
@@ -51,54 +52,56 @@ export default class SliderBox extends Component {
 	}
 
 
-  render() {
-    return (
+	render() {
+		return (
+			<View style={styles.BoxSlider}>
+				<Image style={styles.confRope} source={require('../assets/img/rope.png')}/>
 
-		<View style={styles.Box}>
-			<Image style={styles.confRope} source={require('../assets/img/rope.png')}/>
+				<Text style={styles.textBox} >{this.state.title}</Text>
+				<View style= {styles.box_slide}>
 
-			<Text style={styles.textBox} >{this.state.title}</Text>
-			<View style= {styles.box_slide}>
+					<View style={styles.sliderContainer}>
+						<View style={styles.legendCon}>
 
+							<View style={styles.sideBubble}>
+								<Image style={styles.bubble}source={require('../assets/img/bubble_vib.png')}/>
+								<Text style={styles.sliderTxtsub} >{this.state.minVal +this.state.unit}</Text>
+							</View>
 
-				<View style={styles.sliderContainer}>
-					<View style={styles.legendCon}>
-						<View style={styles.sideBubble}>
-							<Image style={styles.bubble}source={require('../assets/img/bubble_vib.png')}/>
-							<Text style={styles.sliderTxtsub} >{this.state.minVal +this.state.unit}</Text>
+							{this.bubbleInput()}
+
+							<View style={styles.sideBubble}>
+								<Image style={styles.bubble} source={require('../assets/img/bubble_vib.png')}/>
+								<Text style={styles.sliderTxtsub} >{this.state.maxVal +this.state.unit}</Text>
+							</View>
+
 						</View>
-						{this.bubbleInput()}
-						<View style={styles.sideBubble}>
-							<Image style={styles.bubble} source={require('../assets/img/bubble_vib.png')}/>
-							<Text style={styles.sliderTxtsub} >{this.state.maxVal +this.state.unit}</Text>
-						</View>
-
+						{/* Slider */}
+						<Slider
+							style={styles.slider}
+							step={this.state.step}
+							minimumValue={this.state.minVal}
+							maximumValue={this.state.maxVal}
+							value={this.state.curVal}
+							onValueChange={val => {
+													clearTimeout(this.sliderTimeoutId)
+													this.sliderTimeoutId = setTimeout(() => {
+														this.setState({ curVal: Number(val.toFixed(1)) });
+														this.passVal(Number(val.toFixed(1)));
+													}, 100)
+												}
+							}
+							maximumTrackTintColor={palette.black}
+							minimumTrackTintColor={palette.rope}
+							thumbImage={require('../assets/img/anchor_arrow.png')} 
+							thumbTintColor={palette.black}
+						/>
 					</View>
-					<Slider
-						style={styles.slider}
-						step={this.state.step}
-						minimumValue={this.state.minVal}
-						maximumValue={this.state.maxVal}
-						value={this.state.curVal}
-						onValueChange={val => {
-												clearTimeout(this.sliderTimeoutId)
-												this.sliderTimeoutId = setTimeout(() => {
-													this.setState({ curVal: Number(val.toFixed(1)) });
-													this.passVal(Number(val.toFixed(1)));
-												}, 100)
-											}
-						}
-						maximumTrackTintColor={palette.black}
-						minimumTrackTintColor={palette.rope}
-						thumbImage={require('../assets/img/anchor_arrow.png')} 
-						thumbTintColor={palette.black}
-					/>
 				</View>
-			</View>
 
-        </View> 
-    );
-  }
+			</View> 
+    	);
+  	}
 }
 
 

@@ -1,20 +1,18 @@
-import React,{useEffect, useRef, useState, useContext} from 'react';
-import 'react-native-gesture-handler';
-import {StatusBar, SafeAreaView , AppState, Text} from "react-native";
+import React from 'react';
+import {StatusBar, SafeAreaView } from "react-native";
 import Navigator from './routes/navigator';
 
 import styles from "./styles/styles";
 import { DataProvider } from "./components/DataContext";
 import AppStateDetect from "./components/AppStateDetect";
-
 import { useFonts } from 'expo-font';
 
 
-
-console.log("go");
-StatusBar.setBarStyle('light-content', true); // white color text
+StatusBar.setBarStyle('light-content', true); // white color statusBar text
 
 export default function App() {
+
+	// Load fonts
 	const [loaded] = useFonts({
 		Roboto: require('./assets/fonts/RobotoSlab-Regular.ttf'),
 		Alice: require('./assets/fonts/Alice-Regular.ttf'),
@@ -24,6 +22,7 @@ export default function App() {
 		return null;
 	}
 
+	// App structure
 	return (
 		<DataProvider>
 			<SafeAreaView style={styles.screen}>

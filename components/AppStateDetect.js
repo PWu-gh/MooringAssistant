@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
-import {View, Text, AppState, Button } from 'react-native';
+import { useContext, useEffect, useRef, useState } from 'react';
+import { AppState} from 'react-native';
 import {DataContext} from "./DataContext"
 import AsyncStorage  from '@react-native-community/async-storage';
 
@@ -14,6 +14,9 @@ export default function AppStateDetect() {
     // detect on change
 	const appState = useRef(AppState.currentState);
 	const [insert, setInsert] = useState(true);
+
+
+    // This component detects when the user leaves the App and save the data into the historic before.
 
 
 	useEffect(() => {
@@ -41,7 +44,6 @@ export default function AppStateDetect() {
 
 
 	// Storage on close
-
 	async function storeData(key, data){
         try {
             await AsyncStorage.setItem(key, data)
@@ -51,47 +53,45 @@ export default function AppStateDetect() {
         }
     }
 
-    // insert function
+    // insert last modification
     async function insertData(maxsize = 20){
-        let dataObj = {
-            prof: profondeur,
-            rati: ratioChaine,
-            cali:calibrage,
-            depl: deploy,
-            ctime: time,
-            cdate: date
-        }
-
+        let dataObj = { prof: profondeur,
+                        rati: ratioChaine,
+                        cali:calibrage,
+                        depl: deploy,
+                        ctime: time,
+                        cdate: date
+                    };
         try {
             const val = await AsyncStorage.getItem('@hist');
-            let dataRec = JSON.parse(val)
+            let dataRec = JSON.parse(val);
             if(dataRec == null){
                 dataRec = [];
                 dataRec.push(dataObj);
             }
             else{
-                dataRec.push(dataObj)
+                dataRec.push(dataObj);
                 if(dataRec.length > maxsize) // on dépasse la taille max
-                    {dataRec.shift()}
-                
+                    { dataRec.shift(); }
+    
             }
             storeData('@hist', JSON.stringify(dataRec));
-            
         } 
         catch(e) {
             console.log(e);
         }
     }
-    // modify last
+
+
+    // modify last value of the database
     async function updateData(){
-        let dataObj = {
-            prof: profondeur,
-            rati: ratioChaine,
-            cali:calibrage,
-            depl: deploy,
-            ctime: time,
-            cdate: date
-        }
+        let dataObj = { prof: profondeur,
+                        rati: ratioChaine,
+                        cali:calibrage,
+                        depl: deploy,
+                        ctime: time,
+                        cdate: date
+                    }
         try {
             const val = await AsyncStorage.getItem('@hist');
             let dataRec = JSON.parse(val)
@@ -104,9 +104,8 @@ export default function AppStateDetect() {
             console.log(e);
         }
     }
-    
-	
 
+    // render nothing
 	return ( 
 		null      
 	);

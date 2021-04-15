@@ -24,15 +24,13 @@ export function DataProvider({ children }) {
 
     // store data in cache
     async function storeData(key, data){
-        try {
-            await AsyncStorage.setItem(key, data)
-        } 
+        try { await AsyncStorage.setItem(key, data) } 
         catch (e) {
           console.log(e);
         }
     }
 
-    // take from cache and set states
+    // take data from @data and set states
     async function recoverData() {
         try {
             const val = await AsyncStorage.getItem('@data');
@@ -47,6 +45,8 @@ export function DataProvider({ children }) {
             console.log(e);
         }
     }
+
+    // Store data as object
     const updateData = () => {
         let dataObj = {
             prof: profondeur,
@@ -70,24 +70,6 @@ export function DataProvider({ children }) {
         }
     });
 
-    // store historic
-
-    const appStateChange = () => {
-        AppState.addEventListener('change', handleAppStateChange);
-
-        return () => {
-        AppState.removeEventListener('change', handleAppStateChange);
-        };
-    }
-
-    const handleAppStateChange = (nextAppState) => {
-        if (nextAppState!= 'active') { // quand on sort de l'application, on sauvegarde
-            console.log('test '+ nextAppState)
-        }    
-        else{
-            console.log('test '+ nextAppState)
-        }
-    }
 
     return (
         <DataContext.Provider value={{
