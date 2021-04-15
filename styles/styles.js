@@ -337,10 +337,9 @@ export default StyleSheet.create({
         width:"90%",
         aspectRatio:1,
         alignSelf:'center',
-        borderWidth: 5,
-        borderColor: palette.primary,
+        borderWidth: 2,
+        borderColor: palette.third,
         borderRadius:1,
-        borderStyle: 'dashed',
 
     },
     ///////// Button bellow the cam ///////////////
