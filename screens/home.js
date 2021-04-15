@@ -1,9 +1,8 @@
-import React, { useContext, useEffect, useRef, useState }  from 'react';
-import {View, Text, TouchableHighlight, Image, AppState, TouchableOpacity, ImageBackground  } from "react-native";
+import React, { useContext}  from 'react';
+import {View, Text, Image, TouchableOpacity, ImageBackground  } from "react-native";
 
 import styles from "../styles/styles"
 import {DataContext} from "../components/DataContext"
-// import Text from '../components/CustomText'
 
 export default function home({ navigation }) {
     let pressHandler;
@@ -34,11 +33,12 @@ export default function home({ navigation }) {
             </TouchableOpacity>
         
             <View style={styles.btnView}>
-
+                {/* if all data value == 0 , don't display continue manoeuvre */}
                 { recover ? 
 
                 <View/> 
                     : 
+                //  Continue Manoeuvre
                 <TouchableOpacity style= {styles.menuBtn} onPress= { goto('CVision') }>
                     <View style={styles.sflex}>
                         <View style={styles.continueMano}>
@@ -67,7 +67,7 @@ export default function home({ navigation }) {
                 </TouchableOpacity>
                 }
 
-
+                {/*  nouvelle config */}
                 <TouchableOpacity style= {styles.menuBtn} onPress= { goto('Settings') }>
                     <View style={styles.btnView}>
                         <Text style={styles.textHighlight}> Nouvelle configuration</Text>

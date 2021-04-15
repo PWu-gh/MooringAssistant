@@ -1,9 +1,8 @@
-import React, { useState, useContext, useEffect }  from 'react';
-import {View, Text, TouchableHighlight, Image, AppState, ImageBackground  } from "react-native";
+import React, { useState}  from 'react';
+import {View, Text, ImageBackground  } from "react-native";
 import AsyncStorage  from '@react-native-community/async-storage';
 
 import styles from "../styles/styles"
-import {DataContext} from "../components/DataContext"
 import { ScrollView } from 'react-native-gesture-handler';
 
 export default function historic({ navigation }) {
