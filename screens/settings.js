@@ -1,5 +1,5 @@
 import React, {useContext, useState} from 'react';
-import {View, Text, TouchableOpacity, Image } from 'react-native';
+import {View, Text, TouchableOpacity, Image , ImageBackground} from 'react-native';
 
 import styles from "../styles/styles";
 import SliderBox from "../components/sliderBox";
@@ -29,7 +29,7 @@ export default function Settings({ navigation }) {
 	}
 
 	return (
-		<View style= {styles.useScreen}>
+		<ImageBackground source={require('../assets/img/backwater.png')} style= {styles.useScreen}>
 
 			<View style={styles.paramCont}>
 				<SliderBox 
@@ -39,20 +39,20 @@ export default function Settings({ navigation }) {
 					val={setPro}
 				/>
 				<SliderBox 
-					title={"Ratio : ligne de mouillage / profondeur"} 
+					title={"Ratio : Chaine / Profondeur"} 
 					curVal={getRatio} maxVal={6} 
 					unit={' ×'}
 					step ={0.1}
 					val={setRatio}
 				/>
 				<SliderBox 
-					title={"Calibrage : Lg. chaine / tour guindeau (cm)"} 
+					title={"Calibrage : L. chaine / Tour guindeau (cm)"} 
 					curVal={getCali} maxVal={100} 
 					step ={0.1}
 					val={setCali}
 				/>
 				<SliderBox 
-					title={"Longueur déployé (m)"} 
+					title={"Longueur déployée (m)"} 
 					curVal={getDep} maxVal={100} 
 					step ={0.1}
 					val={setDep}
@@ -70,6 +70,6 @@ export default function Settings({ navigation }) {
 
 				</TouchableOpacity>
 			</View>
-		</View>
+		</ImageBackground>
 	);
 }

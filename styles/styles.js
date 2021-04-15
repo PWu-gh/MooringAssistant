@@ -2,12 +2,15 @@ import {StyleSheet, StatusBar, Platform, Image  } from "react-native";
 
 import palette from "./palette";
 
+const fontStyle = "Alice"
+
 export default StyleSheet.create({
     // statusBar
     screen: {
         flex: 1,
         paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,// SafeArea not working on android
         backgroundColor: palette.colorStatus,
+        
     },
     // header styles
     header: {
@@ -15,6 +18,11 @@ export default StyleSheet.create({
     },
     headerTitle:{
         alignSelf:'center',
+        fontFamily: "Alice",
+        fontWeight:'bold',
+        fontSize:22,
+        color: palette.lightSand,
+        
     },
     // usable screen part
     useScreen: {
@@ -26,14 +34,18 @@ export default StyleSheet.create({
     textStyle:{
         color: palette.textColor,
         fontSize: 17,
-        alignSelf:'center'
+        alignSelf:'center',
+        fontFamily: fontStyle,
+
     },
     textHighlight:{
-        color: palette.textColor,
+        color: palette.lightSand,
         fontSize: 18,
         alignSelf:'center',
         fontWeight:'bold',
+        fontFamily: fontStyle,
     },
+    
 
     // button Home page
     btnView:{
@@ -46,9 +58,9 @@ export default StyleSheet.create({
         backgroundColor: palette.primary,
         maxHeight: 180,
         marginBottom: 40,
-        marginHorizontal: "5%",
+        marginHorizontal: "8%",
         borderRadius: 8,
-        // overflow:'hidden',
+        overflow:'hidden',
         
         shadowColor: "#000", // ios
         shadowOffset: {
@@ -61,24 +73,59 @@ export default StyleSheet.create({
         elevation: 9, // android
     },
 
+    backtimeBtn:{
+        right:"4%",
+        top:"2%",
+        height: 60,
+        width: 60,
+        position:'absolute',
+        alignItems:'center',
+        justifyContent:'center',
+        backgroundColor:palette.secondary,
+        borderRadius:50,
+    },
+    backtime:{
+        width: '60%',
+        height: "60%",
+        resizeMode: 'contain',
+    },
+
     continueMano:{
         flex: 1.6,
         alignContent:'center',
         justifyContent:'center',
         backgroundColor: palette.primary,
-        borderBottomWidth:1,
+
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+
+        elevation: 5,
     },
     textBoxL2:{
         flexDirection:'row',
         flex:1,
+        backgroundColor:palette.third,
     },
     textBoxL1:{
         flex:1,
         justifyContent:'center',
-        // borderWidth:1,
-        borderStyle:'dashed',
         borderRadius: 1,
-        borderColor:palette.third,
+
+        // backgroundColor:palette.primary,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 1,
+        },
+        shadowOpacity: 0.18,
+        shadowRadius: 1.00,
+
+        elevation: 1,
     },
     sflex:{
         flex:1,
@@ -153,12 +200,13 @@ export default StyleSheet.create({
     },
     textBox:{
         fontSize:17,
-        color:palette.whiteSand,
+        color:palette.textColor,
         marginBottom:2,
         alignSelf:'center',
-        fontWeight:'bold',
+        // fontWeight:'bold',
         marginBottom:10,
         marginTop:1,
+        fontFamily: fontStyle,
     },
 
     box_slide:{
@@ -175,7 +223,7 @@ export default StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius:50,
-        backgroundColor: palette.lightSand,
+        backgroundColor: palette.virgsand,
         alignSelf:'center',
 
         shadowColor: "#000",
@@ -209,6 +257,7 @@ export default StyleSheet.create({
         fontSize: 20,
         textAlign:'center',
         fontWeight:'bold',
+        fontFamily: fontStyle,
     },
     sliderContainer: {
         flex: 1,
@@ -226,10 +275,12 @@ export default StyleSheet.create({
         fontSize:18,
         top:-4,
         fontWeight:'bold',
+        fontFamily: fontStyle,
     },
     sliderTxtsub:{
         fontSize:15,
         fontWeight:'bold',
+        fontFamily: fontStyle,
         // top:-5,
     },
     slider:{
@@ -242,19 +293,19 @@ export default StyleSheet.create({
     // btn
 
     btnContainer: {
-        elevation: -1,
-        zIndex: -1, // test on ios => img blocks btn click ?
+
         backgroundColor: palette.primary,
         borderRadius: 5,
         paddingVertical: 20,
         marginHorizontal: '5%',
+        
     },
     btnText: {
         fontSize: 18,
         color: "#fff",
         fontWeight: "bold",
         alignSelf: "center",
-        textTransform: "uppercase"
+        fontFamily: fontStyle,
     },
 
     // CVision
@@ -276,12 +327,11 @@ export default StyleSheet.create({
         borderRadius:5,
         marginVertical:'1%',
     },
-    txtVis:{
-    },
     valueVis:{
-        fontSize:24,
+        fontSize:22,
         fontWeight:'bold',
         color: palette.textColor,
+        fontFamily: fontStyle,
     },
     camBox:{
         backgroundColor: palette.black,
@@ -293,17 +343,23 @@ export default StyleSheet.create({
         // maxHeight:'60%',
     },
     btnCam:{
+        flex:1,
         height: 100,
+        width: 200,
         alignContent:'center',
         justifyContent:'center',
+        alignSelf:'center',
+        bottom: 10,
     },
+    // Historic
+
     histScroll:{
-        marginTop:2,
+        // marginTop:2,
         flex:1,
         // width:"100%",
     },
     histPart:{
-        backgroundColor: palette.quadro,
+        backgroundColor: palette.primary,
         flex:1,
         width: "80%",
         height: 120,
@@ -324,6 +380,7 @@ export default StyleSheet.create({
     },
     histDate:{
         backgroundColor: palette.secondary,
+        padding:7,
         justifyContent:'center',
         shadowColor: "#000",
         shadowOffset: {
@@ -334,6 +391,15 @@ export default StyleSheet.create({
         shadowRadius: 3.84,
 
         elevation: 5,
+    },
+    numTopLeft:{
+        color: palette.textColor,
+        fontSize: 18,
+        alignSelf:'center',
+        fontWeight:'bold',
+        fontFamily: fontStyle,
+        position:'absolute',
+        left:10,
     },
 
 

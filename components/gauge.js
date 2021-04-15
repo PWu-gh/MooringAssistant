@@ -6,6 +6,8 @@ import { TouchableHighlight } from 'react-native-gesture-handler';
 
 export default function Gauge({ gaugeValue, gaugeMax, profond }){
 	const percentGauge = (gaugeValue*100/gaugeMax) > 100 ? 100: (gaugeValue*100/gaugeMax);
+
+	const fontStyle = 'Alice';
 	const dynamicStyle = StyleSheet.create({
 		progressGauge:{
 			backgroundColor: palette.rope,
@@ -32,11 +34,21 @@ export default function Gauge({ gaugeValue, gaugeMax, profond }){
 		gaugeVal:{
 			fontWeight: 'bold',
 			fontSize:18,
+			color:palette.lightSand,
+			bottom:5,
+			fontFamily: fontStyle,
 		},
 		gaugeLegend:{
-			width:"80%",
+			width:"84%",
 			flexDirection: 'row',
-			justifyContent:'space-between'
+			justifyContent:'space-between',
+			bottom:35,
+		},
+		textLegend:{
+			fontWeight: 'bold',
+			fontSize:18,
+			color:palette.rope,
+			fontFamily: fontStyle,
 		},
 		anchorBox:{
 			position:'absolute',
@@ -48,25 +60,25 @@ export default function Gauge({ gaugeValue, gaugeMax, profond }){
 			height:80,
 			resizeMode: 'contain',
 			top: 3,
-			left: -70,
+			left: -88,
 		}
 
 	})
-	let valRatio = gaugeValue/ profond;
+	let valRatio = Number((gaugeValue/ profond).toFixed(2));
 	return(
 		<View style={dynamicStyle.gaugeCont}>
-			<Text style={dynamicStyle.gaugeVal}>{gaugeValue} (x{valRatio}) </Text>
+			<Text style={dynamicStyle.gaugeVal}>{gaugeValue}m  (x{valRatio}) </Text>
 			<View style={dynamicStyle.gauge}>
 				<View style={dynamicStyle.progressGauge}></View>
 				<View style={dynamicStyle.anchorBox}>
-					<Image style={dynamicStyle.anchor} source={require('../assets/img/anchor2.png')}/>		
+					<Image style={dynamicStyle.anchor} source={require('../assets/img/anchor_draw.png')}/>		
 				</View>
 			</View>
 			{/* <Image style={dynamicStyle.anchor} source={require('../assets/img/ancre.png')}/> */}
 
 			<View style={dynamicStyle.gaugeLegend}>
-				<Text >0</Text>
-				<Text >{gaugeMax}</Text>
+				<Text style={dynamicStyle.textLegend}>0</Text>
+				<Text style={dynamicStyle.textLegend}>{gaugeMax}</Text>
 			</View>		
 		</View>
 	)

@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect }  from 'react';
-import {View, Text, TouchableHighlight, Image, AppState  } from "react-native";
+import {View, Text, TouchableHighlight, Image, AppState, ImageBackground  } from "react-native";
 import AsyncStorage  from '@react-native-community/async-storage';
 
 import styles from "../styles/styles"
@@ -10,7 +10,7 @@ export default function historic({ navigation }) {
     const pressHandler = () => navigation.goBack();
 
     // context val
-    const { stateProf, stateCali, stateRatio, stateDeploy } = useContext(DataContext);
+    const { stateProf, stateCali, stateRatio, stateDeploy} = useContext(DataContext);
     const [profondeur, setProfondeur] = stateProf;
     const [ratioChaine, setRatioChaine] = stateRatio;
     const [calibrage, setCalibrage] = stateCali;
@@ -28,49 +28,8 @@ export default function historic({ navigation }) {
     let curTime = hour+":"+min;
 
     const [getDate, setDate] = useState("[]");
+    
 
-
-    async function storeData(key, data){
-        try {
-            await AsyncStorage.setItem(key, data)
-        } 
-        catch (e) {
-          console.log(e);
-        }
-    }
-
-
-    async function insertData(maxsize = 10){
-        let dataObj = {
-            prof: profondeur,
-            rati: ratioChaine,
-            cali:calibrage,
-            depl: deploy,
-            ctime: curTime,
-            cdate: curDate
-        }
-        try {
-            const val = await AsyncStorage.getItem('@hist');
-            let dataRec = JSON.parse(val)
-            if(dataRec == null){
-                dataRec = [];
-                dataRec.push(dataObj);
-            }
-            else{
-                dataRec.push(dataObj)
-                if(dataRec.length > maxsize){ // on dépasse la taille max
-                    dataRec.shift()
-                }
-            }
-            // console.log(dataRec)*
-            console.log("pamplemousse")
-            storeData('@hist', JSON.stringify(dataRec));
-            
-        } 
-        catch(e) {
-            console.log(e);
-        }
-    }
     async function retrieveData(key){
         try {
             const val = await AsyncStorage.getItem(key);
@@ -103,7 +62,8 @@ export default function historic({ navigation }) {
             <View key={histData.length-i} style= {styles.histPart}>
                 <View style={styles.sflex}>
                     <View style={styles.histDate}>
-                        <Text style={styles.textHighlight}>{histData.length-i}    [{histData[i].ctime}]   {histData[i].cdate}</Text>
+                        <Text style={styles.textHighlight}>[{histData[i].ctime}]   {histData[i].cdate}</Text>
+                        <Text style={styles.numTopLeft}>{histData.length-i}</Text>
                     </View>
                     <View style={styles.textBoxL2}>
                         <View style={styles.textBoxL1}>
@@ -129,23 +89,15 @@ export default function historic({ navigation }) {
 	}
 
     return (
-        <View style= {styles.useScreen}>
+        <ImageBackground source={require('../assets/img/backwater.png')} style= {styles.useScreen}>
 
             <ScrollView style={styles.histScroll}>
-                <View style={{height:60}}></View>
+                <View style={{height:30}}></View>
                 { HistView}
                 <View style={{height:60}}></View>
             </ScrollView>
 
-
-
-            {/* <TouchableHighlight style= {styles.menuBtn} onPress= { ()=> insertData()}>
-                <View>
-                    <Text style={styles.textStyle}>hist</Text>
-                </View>
-            </TouchableHighlight> */}
-
-        </View>
+        </ImageBackground>
 
     );
 }

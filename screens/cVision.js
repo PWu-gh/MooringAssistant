@@ -1,5 +1,5 @@
 import React, {useContext, useState, useEffect} from 'react';
-import {View, Text, TouchableOpacity } from 'react-native';
+import {View, Text, TouchableOpacity, ImageBackground } from 'react-native';
 
 import styles from "../styles/styles";
 import {DataContext} from "../components/DataContext"
@@ -19,15 +19,15 @@ export default function CVision({ navigation }) {
 	let lDeploy = Number((profondeur * ratioChaine).toFixed(1));
 
 	return (
-		<View style= {styles.useScreen}>
+		<ImageBackground source={require('../assets/img/backwater.png')} style= {styles.useScreen}>
 			<View style={styles.infoVisCont}>
-				<View style={styles.infoVis}>
-					<Text style={styles.textStyle}>Tours de guindeau : </Text>
-					<Text style={styles.valueVis}>{nbGuindeau}</Text>
-				</View>
 				<View style={styles.infoVis}>
 					<Text style={styles.textStyle}>Longueur à déployer : {}</Text>
 					<Text style={styles.valueVis}>{lDeploy}m</Text>
+				</View>
+				<View style={styles.infoVis}>
+					<Text style={styles.textStyle}>Tours de guindeau : </Text>
+					<Text style={styles.valueVis}>{nbGuindeau}</Text>
 				</View>
 			</View>
 
@@ -38,10 +38,10 @@ export default function CVision({ navigation }) {
 			<Gauge gaugeValue={deploy} gaugeMax={lDeploy} profond={profondeur}></Gauge>
 
 			<View style={styles.btnCam}>
-				<TouchableOpacity onPress={()=> setDeploy(deploy+5)} style={styles.btnContainer}>
-				<Text style={styles.btnText}>OK</Text>
+				<TouchableOpacity onPress={()=> setDeploy(deploy+2)} style={styles.btnContainer}>
+				<Text style={styles.btnText}>Start</Text>
 				</TouchableOpacity>
 			</View>
-		</View>
+		</ImageBackground>
 	);
 }

@@ -1,8 +1,9 @@
-import React, { useContext, useEffect }  from 'react';
-import {View, Text, TouchableHighlight, Image, AppState  } from "react-native";
+import React, { useContext, useEffect, useRef, useState }  from 'react';
+import {View, Text, TouchableHighlight, Image, AppState, TouchableOpacity, ImageBackground  } from "react-native";
 
 import styles from "../styles/styles"
 import {DataContext} from "../components/DataContext"
+// import Text from '../components/CustomText'
 
 export default function home({ navigation }) {
     let pressHandler;
@@ -11,84 +12,51 @@ export default function home({ navigation }) {
         return pressHandler;
     }
 
-    // navigation.setOptions({
-    //     'title': 'Other title'
-    // })
-
-
-    // useEffect(() => {
-    //     // console.log(AppState._supportedEvents)
-	// 	appStateChange;
-	//  });
-	
-    // const appStateChange = () => {
-    //     // if( !AppState._supportedEvents.includes('change')){
-    //         AppState.addEventListener('change', handleAppStateChange);
-	
-    //         return () => {
-    //           AppState.removeEventListener('change', handleAppStateChange);
-    //         };
-    //     // }
-    // }
-
-	// const handleAppStateChange = (nextAppState) => {
-	//   if (nextAppState!= 'active') {
-	// 	console.log('test '+ nextAppState)
-	//   }    
-	//   else{
-	// 	  console.log('test '+ nextAppState)
-	//   }
-	// }
-
     // context val
-    const { stateProf, stateCali, stateRatio, stateDeploy } = useContext(DataContext);
+    const { stateProf, stateCali, stateRatio, stateDeploy , time, date} = useContext(DataContext);
     const [profondeur, setProfondeur] = stateProf;
     const [ratioChaine, setRatioChaine] = stateRatio;
     const [calibrage, setCalibrage] = stateCali;
     const [deploy, setDeploy] = stateDeploy;
 
-    let recover = profondeur==0 && ratioChaine==0 && calibrage==0  && deploy==0;
+    let recover = profondeur==0 && ratioChaine==0 && calibrage==0  && deploy==0; 
 
-    let date = new Date();
-    let day = ("0" + date.getDate()).slice(-2); //To get the Current Date
-    let month = ('0' + (date.getMonth() + 1)).slice(-2); //To get the Current Month
-    let year = date.getFullYear().toString().slice(-2); //To get the Current Year
-    let hour = ("0" + date.getHours()).slice(-2); //To get the Current Hours
-    let min = ("0" + date.getMinutes()).slice(-2); //To get the Current Minutes
-
-    let currentDate = hour+":"+min + "  "+ day + "-"+ month+"-"+ year ;
+    
 
 
 
     return (
-        <View style= {styles.useScreen}>
+        <ImageBackground source={require('../assets/img/backwater.png')} style= {styles.useScreen}>
+
+            <TouchableOpacity style={styles.backtimeBtn} onPress={goto('Historic')}>
+                <Image style={styles.bubble}source={require('../assets/img/bubble_vib.png')}/>
+                <Image style={styles.backtime} source={require('../assets/img/backtime.png')}/>
+            </TouchableOpacity>
+        
             <View style={styles.btnView}>
 
                 { recover ? 
 
                 <View/> 
                     : 
-                <TouchableHighlight style= {styles.menuBtn} onPress= { goto('CVision') }>
+                <TouchableOpacity style= {styles.menuBtn} onPress= { goto('CVision') }>
                     <View style={styles.sflex}>
                         <View style={styles.continueMano}>
                             <Text style={styles.textHighlight}> Continuer manoeuvre</Text>
-                            <Text style={styles.textStyle}>{currentDate}</Text>
+                            <Text style={styles.textStyle}>[{time}] {date}</Text>
                         </View>
-                        <Image style={styles.imgRope} source={require('../assets/img/rope.png')}/>
-
-
                         <View style={styles.textBoxL2}>
                             <View style={styles.textBoxL1}>
                                 <Text style={styles.textStyle}>Profondeur : {profondeur}</Text>
                             </View>
                             <View style={styles.textBoxL1}>
-                                <Text style={styles.textStyle}>Ratio chaine : {ratioChaine}</Text>
+                                <Text style={styles.textStyle}>Calibrage : {calibrage}</Text>
                             </View>
                         </View>
 
                         <View style={styles.textBoxL2}>
                             <View style={styles.textBoxL1}>
-                                <Text style={styles.textStyle}>Long. / tour : {calibrage}</Text>
+                                <Text style={styles.textStyle}>Ratio : {ratioChaine}</Text>
                             </View>
                             <View style={styles.textBoxL1}>
                                 <Text style={styles.textStyle}>Long. déployé : {deploy}</Text>
@@ -96,24 +64,19 @@ export default function home({ navigation }) {
                         </View>
 
                     </View>
-                </TouchableHighlight>
+                </TouchableOpacity>
                 }
 
 
-                <TouchableHighlight style= {styles.menuBtn} onPress= { goto('Settings') }>
+                <TouchableOpacity style= {styles.menuBtn} onPress= { goto('Settings') }>
                     <View style={styles.btnView}>
                         <Text style={styles.textHighlight}> Nouvelle configuration</Text>
                         <Image style={styles.centerImg} source={require('../assets/img/plus.png')}/>
                     </View>
-                </TouchableHighlight>
+                </TouchableOpacity>
 
-                <TouchableHighlight style= {styles.menuBtn} onPress={goto('Historic')}>
-                    <View>
-                        <Text style={styles.textStyle}>hist</Text>
-                    </View>
-                </TouchableHighlight>
             </View>
-        </View>
+        </ImageBackground>
 
     );
 }

@@ -12,6 +12,15 @@ export function DataProvider({ children }) {
     const [calibrage, setCalibrage] = useState(0);
     const [deploy, setDeploy] = useState(0);
 
+    let date = new Date();
+    let day = ("0" + date.getDate()).slice(-2); //To get the Current Date
+    let month = ('0' + (date.getMonth() + 1)).slice(-2); //To get the Current Month
+    let year = date.getFullYear().toString().slice(-2); //To get the Current Year
+    let hour = ("0" + date.getHours()).slice(-2); //To get the Current Hours
+    let min = ("0" + date.getMinutes()).slice(-2); //To get the Current Minutes
+
+    let curDate = day + "-"+ month+"-"+ year
+    let curTime = hour+":"+min;
 
     // store data in cache
     async function storeData(key, data){
@@ -33,7 +42,6 @@ export function DataProvider({ children }) {
             setRatioChaine(dataObj.rati);
             setCalibrage(dataObj.cali);
             setDeploy(dataObj.depl);
-
         } 
         catch(e) {
             console.log(e);
@@ -44,7 +52,9 @@ export function DataProvider({ children }) {
             prof: profondeur,
             rati: ratioChaine,
             cali:calibrage,
-            depl: deploy
+            depl: deploy,
+            ctime: curTime,
+            cdate: curDate,
         }
         storeData('@data', JSON.stringify(dataObj));
     }
@@ -84,7 +94,10 @@ export function DataProvider({ children }) {
             stateProf: [profondeur, setProfondeur], 
             stateRatio: [ratioChaine, setRatioChaine], 
             stateCali: [calibrage, setCalibrage], 
-            stateDeploy: [deploy, setDeploy]}}
+            stateDeploy: [deploy, setDeploy],
+            time: curTime,
+            date: curDate,
+        }}
         >
 
             {children}
