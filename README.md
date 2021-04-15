@@ -26,3 +26,5 @@ Then :
 
 Required: nodeJS and expo-cli
 
+
+TO DO: add computer vision to the Camera Component and add it to the CVision file.
