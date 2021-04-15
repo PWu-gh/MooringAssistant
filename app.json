@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "MooringA",
+    "name": "MooringAssistant",
     "slug": "MooringA",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -24,10 +24,12 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "softwareKeyboardLayoutMode":"pan"
+      "softwareKeyboardLayoutMode": "pan"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "",
+    "githubUrl": "https://github.com/PWu-gh/MooringAssistant"
   }
 }

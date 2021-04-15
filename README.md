@@ -4,8 +4,17 @@ how to clone on your computer
 ``git clone https://github.com/PWu-gh/MooringAssistant.git``   
 
 
-In new repository
+Download on your computer
 
-``expo init app_name``  
-copy and paste files from the git clone into app_name  
-in app_name ``expo upgrade``
+Go into the /MooringAssistant folder
+
+Then type : 
+``npm install``
+To install all the dependencies.
+
+Then : 
+``expo start``
+
+To test on Expo GO App, dowloadable on iOS and Android:
+
+scan the QR code on : https://expo.io/@pwu_dev/projects/MooringA

@@ -197,7 +197,7 @@ export default StyleSheet.create({
         position: 'absolute',
         right:'96%',
         top:88, 
-        zIndex:1,
+        // zIndex:1,
     },
     textBox:{
         fontSize:17,

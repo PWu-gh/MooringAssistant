@@ -40,14 +40,14 @@ export default function Settings({ navigation }) {
 					val={setPro}
 				/>
 				<SliderBox 
-					title={"Ratio : Chaine : Profondeur"} 
+					title={"Ratio : L. Chaine x Profondeur"} 
 					curVal={getRatio} maxVal={6} 
 					unit={' ×'}
 					step ={0.1}
 					val={setRatio}
 				/>
 				<SliderBox 
-					title={"Calibrage : L. chaine / Tour guindeau (cm)"} 
+					title={"Calibrage (cm) : L. chaine/Tr guindeau"} 
 					curVal={getCali} maxVal={100} 
 					step ={0.1}
 					val={setCali}
