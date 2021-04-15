@@ -30,6 +30,6 @@
       "favicon": "./assets/favicon.png"
     },
     "description": "Mooring Assistant app interface.",
-    "githubUrl": "https://github.com/PWu-gh/MooringAssistant"
+    "owner": "sailt"
   }
 }
