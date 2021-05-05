@@ -1,7 +1,7 @@
 # MooringAssistant : Smart Anchor
 
 ## Pour tester l'application sur  `Expo GO`, dowloadable on iOS and Android:
-- scannez le QR code sur : https://expo.io/@pwu_dev/projects/MooringA
+- scannez le QR code avec 'Expo GO' sur : https://expo.io/@sailt/projects/MooringA
 
 Attention! Pour pouvoir le tester sur iOS il faut y être invité dans la Team expo.
 
