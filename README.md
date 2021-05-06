@@ -42,7 +42,7 @@ La mesure commence lorsque l'utilisateur appuie sur le bouton start.
 Une jauge progresse en même temps que la longueur déployé augmente.
 
 ### Page d'historique
-Permet d'afficher l'historique des 20 dernières configurations., Une configuration est sauvegardée lorsque l'utilisateur qsuitte l'application.
+Permet d'afficher l'historique des 20 dernières configurations. Une configuration est sauvegardée lorsque l'utilisateur quitte l'application.
 
 
 
