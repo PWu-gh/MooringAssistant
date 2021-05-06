@@ -26,20 +26,20 @@ TO DO: add computer vision to the Camera Component and add it to the CVision fil
 ### Page d'accueil
 Lorsque nous arrivons sur la page d'accueil, nous pouvons :
 - voir l'historique
-- continuer une manoeuvre précédemment commencé. ( si possible)
+- continuer une manoeuvre précédemment commencée. ( si possible)
 - créer une nouvelle configuration
 
 ### Page de configuration
 Sur la page de configuration nous pouvons:
 - définir la profondeur des eaux
 - définir le ratio de la longueur qu'on veut déployer par rapport à la profondeur des eaux
-- définir le calibrage, soit la longueur de la chaine déployé pour un tour entier de guindeau
+- définir le calibrage, soit la longueur de la chaine déployée pour un tour entier de guindeau
 - définir une longueur déjà déployé ( utile pour pouvoir reprendre des données de quelqu'un)
 
 ### Page du Computer vision
 Sur cette page l'utilisateur doit pouvoir utiliser la caméra du smartphone afin de compter le nombre de tours que fait le guindeau.
 La mesure commence lorsque l'utilisateur appuie sur le bouton start.
-Une jauge progresse en même temps que la longueur déployé augmente.
+Une jauge progresse en même temps que la longueur déployée augmente.
 
 ### Page d'historique
 Permet d'afficher l'historique des 20 dernières configurations. Une configuration est sauvegardée lorsque l'utilisateur quitte l'application.
